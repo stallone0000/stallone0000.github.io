@@ -45,3 +45,5 @@ python3 -m http.server 8765
 - 主页只介绍研究方向，实习经历在 CV 展示；审稿服务依据个人记录，只公开 venue、年份及角色。
 
 素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。Lato 字体自托管，许可见 `assets/fonts/OFL.txt`。
+
+标签页小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可，图形未经修改。

@@ -2,7 +2,7 @@
 
 - `assets/images/qilong-shi.jpg`: portrait supplied and selected by Qilong Shi (`IMG_5491.JPG`). Optimized for web delivery; original framing is retained in the file, with responsive CSS cropping on the homepage. Metadata removed.
 - `assets/fonts/lato-regular.woff2`, `lato-bold.woff2`: Lato, served locally from the Google Fonts distribution. SIL Open Font License 1.1 is included at `assets/fonts/OFL.txt`.
-- `assets/favicon.svg`: original lettermark for this website.
+- `assets/favicon.svg`: unmodified OpenMoji “clown face” (U+1F921), by the OpenMoji contributors. [Original SVG](https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F921.svg), [OpenMoji](https://openmoji.org/), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). License text is included at `assets/licenses/openmoji-CC-BY-SA-4.0.txt`; the icon remains under that license.
 
 Research figures are extracted from the corresponding papers coauthored by Qilong Shi. Their individual sources are recorded below. They illustrate those papers only and are not generic template assets.
 
