@@ -412,6 +412,7 @@
   {
     "id": "bitmatcher",
     "title": "BitMatcher: Bit-level Counter Adjustment for Sketches",
+    "note": "Outstanding Paper Award (First Prize), Computer Academy of Guangdong, 2024.",
     "authors": [
       "Qilong Shi*",
       "Chengjun Jia*",
