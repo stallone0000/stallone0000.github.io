@@ -1,0 +1,43 @@
+# Qilong Shi · Personal academic website
+
+Live website: **https://stallone0000.github.io/**
+
+English academic homepage with a printable CV. The layout follows the compact, white-background academic style selected from [Ben Mildenhall's homepage](https://bmild.github.io/) and the [Jon Barron](https://jonbarron.info/) family of personal websites. The HTML/CSS here was implemented independently; it does not include their personal content, tracking scripts, or source code.
+
+## 编辑内容
+
+- `data/profile.json`：简介、联系方式、教育、实习、教学、奖项、服务和精选项目。
+- `data/publications.json`：完整论文列表、作者顺序、共同一作、正式链接和缩略图。
+- `assets/images/`：经过压缩的本人照片与本人论文图。
+- `templates/base.html`、`assets/style.css`：公共页面结构和样式。
+- `scripts/build.py`：仅依赖 Python 3 标准库，生成可直接发布的 HTML。
+
+更新数据后运行：
+
+```sh
+python3 scripts/build.py
+python3 -m http.server 8765
+```
+
+打开 http://localhost:8765 。将修改后的数据与生成的页面一起 commit / push 到 `main`，GitHub Pages 自动发布仓库根目录。无需 Node.js、API 密钥、数据库或运行时服务。
+
+## 更换模板
+
+私人备选档案库：**https://github.com/stallone0000/academic-website-templates**
+
+其中保存 Keunhong Park、Yuki Asano、Matthew Tancik、Ben Mildenhall、Saining Xie、Maithra Raghu 和 Tianxing Chen 的参考快照、来源与许可说明。Tianxing 是未来经历更丰富时的优先备选。
+
+更换时保留 `data/`、本人照片和论文素材，按目标布局改造模板层，再生成网站。各参考站框架不同，档案不是一键主题切换器；没有明确复用许可的源码仅作私有参考，独立实现对应布局。开始换版前先为当前版本打 tag，便于恢复。
+
+## 数据口径
+
+资料整理于 2026-09-24。教育、服务和已列论文依据个人简历及公开论文记录；360 实习起止为本人确认的 2025.08–2026.08。AI 相关研究与该实习关联，但不改写各论文的正式署名。
+
+- 论文链接指向 DOI、ACL Anthology 或 arXiv 原记录。
+- `*` 标注公开原文确认的 equal contribution。
+- 预印本与正式论文分开标注。ScienceArena 在本版暂按 arXiv 预印本展示，待正式 proceedings 可核验后更新。
+- 奖项仅列可确认名称，未使用存在口径差异的排名描述。
+- `cv.html` 是根据当前数据生成的公开版 CV；不上传原始私人简历文件。
+- 照片使用本人指定的 `IMG_5491.JPG`，只进行尺寸/编码优化并移除元数据。
+
+素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。Lato 字体自托管，许可见 `assets/fonts/OFL.txt`。

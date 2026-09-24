@@ -1,0 +1,460 @@
+[
+  {
+    "id": "filtering",
+    "title": "Filtering and Accelerating: A Unified Framework for High-Performance Persistence Estimation",
+    "authors": [
+      "Qilong Shi",
+      "Lu Cao",
+      "Weiqiang Xiao",
+      "Nianfu Wang",
+      "Wenjun Li",
+      "Tong Yang",
+      "Zhijun Li",
+      "Weizhe Zhang",
+      "Mingwei Xu"
+    ],
+    "venue": "IEEE TKDE",
+    "year": 2026,
+    "url": "https://doi.org/10.1109/TKDE.2026.3695579",
+    "description": "A unified filtering and acceleration framework for high-performance persistence estimation.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1109/TKDE.2026.3695579"
+    }
+  },
+  {
+    "id": "jittersketch",
+    "title": "JitterSketch: Finding Jittery Flows in Network Streams",
+    "authors": [
+      "Zhongxian Liang*",
+      "Qilong Shi*",
+      "Xiyan Liang",
+      "Zihan Li",
+      "Wenjun Li",
+      "Tong Yang",
+      "Yangyang Wang",
+      "Mingwei Xu",
+      "Weizhe Zhang"
+    ],
+    "venue": "The Web Conference (WWW)",
+    "year": 2026,
+    "url": "https://doi.org/10.1145/3774904.3792328",
+    "description": "A sketch-based approach to detecting jittery flows by filtering infrequent and stable traffic.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3774904.3792328"
+    }
+  },
+  {
+    "id": "reasoning-skills",
+    "title": "Thinking with Reasoning Skills: Fewer Tokens, More Accuracy",
+    "authors": [
+      "Guangxiang Zhao*",
+      "Qilong Shi*",
+      "Xusen Xiao",
+      "Xiangzheng Zhang",
+      "Tong Yang",
+      "Lin Sun"
+    ],
+    "venue": "ACL · Industry Track",
+    "year": 2026,
+    "url": "https://aclanthology.org/2026.acl-industry.154/",
+    "description": "Retrieve and reuse reasoning skills to reduce redundant reasoning and improve accuracy.",
+    "selected": true,
+    "links": {
+      "Paper": "https://aclanthology.org/2026.acl-industry.154/",
+      "PDF": "https://aclanthology.org/2026.acl-industry.154.pdf",
+      "Code": "https://github.com/stallone0000/Reasoning-Skill"
+    },
+    "image": "assets/images/thinking-with-reasoning-skills-fig2.png",
+    "image_alt": "Overview of reasoning-skill extraction, retrieval and reuse",
+    "image_width": 1395,
+    "image_height": 570
+  },
+  {
+    "id": "tinyr1",
+    "title": "TinyR1-32B-Preview: Boosting Accuracy with Branch-Merge Distillation",
+    "authors": [
+      "Lin Sun",
+      "Guangxiang Zhao",
+      "Xiaoqi Jian",
+      "Yuhan Wu",
+      "Weihong Lin",
+      "Yongfu Zhu",
+      "Qilong Shi",
+      "Change Jia",
+      "Aomufei Yuan",
+      "Yuxuan Tian",
+      "Linglin Zhang",
+      "Jinzhu Wu",
+      "Junfeng Ran",
+      "Sai-er Hu",
+      "Zihan Jiang",
+      "Junting Zhou",
+      "Wenrui Liu",
+      "Xusen Xiao",
+      "Bin Cui",
+      "Tong Yang",
+      "Xiangzheng Zhang"
+    ],
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2503.04872",
+    "description": "Branch-Merge distillation combines domain-specific expert knowledge in a general reasoning model.",
+    "selected": false,
+    "links": {
+      "Paper": "https://arxiv.org/abs/2503.04872"
+    },
+    "note": "Updated April 2026; first posted in 2025."
+  },
+  {
+    "id": "scf",
+    "title": "Beyond Parameter Arithmetic: Sparse Complementary Fusion for Distribution-Aware Model Merging",
+    "authors": [
+      "Weihong Lin",
+      "Lin Sun",
+      "Qilong Shi",
+      "Aomufei Yuan",
+      "Yuxuan Tian",
+      "Zhengyang Wang",
+      "Guangxiang Zhao",
+      "Xiangzheng Zhang",
+      "Tong Yang"
+    ],
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.11717",
+    "description": "Sparse, distribution-aware updates reduce functional interference during model merging.",
+    "selected": true,
+    "links": {
+      "Paper": "https://arxiv.org/abs/2602.11717"
+    },
+    "image": "assets/images/beyond-parameter-arithmetic-fig1.png",
+    "image_alt": "Repetition rates for model-merging methods reported in the paper",
+    "image_width": 723,
+    "image_height": 372
+  },
+  {
+    "id": "reasoning-data",
+    "title": "A Primer in Post-Training Reasoning Data: What We Know About How It Works",
+    "authors": [
+      "Yaoming Li",
+      "Guangxiang Zhao",
+      "Qilong Shi",
+      "Lin Sun",
+      "Xiangzheng Zhang",
+      "Tong Yang"
+    ],
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.02113",
+    "description": "A study of reasoning data for post-training large language models.",
+    "selected": false,
+    "links": {
+      "Paper": "https://arxiv.org/abs/2606.02113"
+    }
+  },
+  {
+    "id": "sciencearena",
+    "title": "ScienceArena: Benchmarking LLMs on Latest Scientific Olympiad Competitions",
+    "authors": [
+      "Guangxiang Zhao",
+      "Qilong Shi",
+      "Xusen Xiao",
+      "Wenpu Liu",
+      "Yaoming Li",
+      "Linfeng Hao",
+      "Shuyang Hou",
+      "Zijian Guo",
+      "Xinrui Zhang",
+      "Yuntian Zhao",
+      "Zhengyang Wang",
+      "Wenrui Liu",
+      "Yuhan Wu",
+      "Tong Yang",
+      "Lin Sun",
+      "Xiangzheng Zhang"
+    ],
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.30517",
+    "description": "Evaluating large language models on recent scientific Olympiad competitions.",
+    "selected": true,
+    "links": {
+      "Paper": "https://arxiv.org/abs/2608.30517",
+      "Project": "https://github.com/stallone0000/Science-Arena"
+    },
+    "image": "assets/images/sciencearena-fig1.png",
+    "image_alt": "ScienceArena benchmark construction pipeline",
+    "image_width": 1395,
+    "image_height": 348
+  },
+  {
+    "id": "heavylocker",
+    "title": "HeavyLocker: Lock Heavy Hitters in Distributed Data Streams",
+    "authors": [
+      "Qilong Shi*",
+      "Xirui Li*",
+      "Hanyue Zheng*",
+      "Tong Yang",
+      "Yangyang Wang",
+      "Mingwei Xu"
+    ],
+    "venue": "KDD",
+    "year": 2025,
+    "url": "https://doi.org/10.1145/3690624.3709167",
+    "description": "A latching mechanism for accurate heavy-hitter detection in local and distributed data streams.",
+    "selected": true,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3690624.3709167",
+      "PDF": "https://yangtonghome.github.io/uploads/3690624.3709167_SIGKDD2025.pdf",
+      "Code": "https://github.com/HeavyLocker/HeavyLockerSketch"
+    },
+    "image": "assets/images/heavylocker-fig3.png",
+    "image_alt": "HeavyLocker buckets and lock-bit structure",
+    "image_width": 720,
+    "image_height": 366
+  },
+  {
+    "id": "cooled-kll",
+    "title": "Cooled-KLL: Enhancing Quantile Estimation by Filtering Hot Item",
+    "authors": [
+      "Qilong Shi",
+      "Wei Zhou",
+      "Yizhuo Zheng",
+      "Xinye Xu",
+      "Ting Yang",
+      "Yuanyuan Zhang",
+      "Long Yao",
+      "Yangyang Wang",
+      "Mingwei Xu"
+    ],
+    "venue": "KDD",
+    "year": 2025,
+    "url": "https://doi.org/10.1145/3711896.3736894",
+    "description": "Filtering hot items improves the accuracy and memory efficiency of KLL quantile estimation.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3711896.3736894"
+    }
+  },
+  {
+    "id": "hypersistent",
+    "title": "Hypersistent Sketch: Enhanced Persistence Estimation via Fast Item Separation",
+    "authors": [
+      "Lu Cao*",
+      "Qilong Shi*",
+      "Weiqiang Xiao",
+      "Nianfu Wang",
+      "Wenjun Li",
+      "Zhijun Li",
+      "Weizhe Zhang",
+      "Mingwei Xu"
+    ],
+    "venue": "ICDE",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/ICDE65448.2025.00227",
+    "description": "Fast item separation improves the accuracy and throughput of persistence estimation.",
+    "selected": true,
+    "links": {
+      "Paper": "https://doi.org/10.1109/ICDE65448.2025.00227",
+      "PDF": "https://wenjunli.com/HypersistentSketch/HypersistentSketch_ICDE2025_CR.pdf",
+      "Code": "https://github.com/wenjunpaper/HypersistentSketch"
+    },
+    "image": "assets/images/hypersistent-sketch-fig5.png",
+    "image_alt": "Hypersistent Sketch burst filter, cold filter and hot-part pipeline",
+    "image_width": 741,
+    "image_height": 276
+  },
+  {
+    "id": "pssketch",
+    "title": "PSSketch: Finding Persistent and Sparse Flow with High Accuracy and Efficiency",
+    "authors": [
+      "Jiayao Wang",
+      "Qilong Shi",
+      "Xiyan Liang",
+      "Han Wang",
+      "Wenjun Li",
+      "Ziling Wei",
+      "Weizhe Zhang",
+      "Shuhui Chen"
+    ],
+    "venue": "KDD",
+    "year": 2025,
+    "url": "https://doi.org/10.1145/3711896.3737094",
+    "description": "A layered sketch for finding persistent, sparse flows in network streams.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3711896.3737094"
+    }
+  },
+  {
+    "id": "heavyfinder",
+    "title": "HeavyFinder: Efficient and Fine-Grained Heavy Hitters Detection with Instantaneous Flow Rate",
+    "authors": [
+      "Xirui Li",
+      "Yangyang Wang",
+      "Ruihao Wang",
+      "Jiahao Cao",
+      "Qilong Shi",
+      "Mingwei Xu",
+      "Lihua Miao"
+    ],
+    "venue": "IWQoS",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/IWQoS65803.2025.11143517",
+    "description": "Fine-grained heavy-hitter detection using instantaneous flow rates.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1109/IWQoS65803.2025.11143517"
+    }
+  },
+  {
+    "id": "voice-control",
+    "title": "Edge-Optimized Voice Control with 0.26M Parameters: Distilling 86M Adaptive Window Audio Transformer for Real-World Variable-Length Inputs",
+    "authors": [
+      "Pinze Ren",
+      "Zhen Chen",
+      "Yinjun Wu",
+      "Weiran Lin",
+      "Qilong Shi",
+      "Chao Li",
+      "Jianxin Yang"
+    ],
+    "venue": "IEEE BigData",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/BigData66926.2025.11400898",
+    "description": "Distilling a large audio transformer into a compact model for edge-based voice control.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1109/BigData66926.2025.11400898"
+    }
+  },
+  {
+    "id": "bitmatcher",
+    "title": "BitMatcher: Bit-level Counter Adjustment for Sketches",
+    "authors": [
+      "Qilong Shi*",
+      "Chengjun Jia*",
+      "Wenjun Li",
+      "Zaoxing Liu",
+      "Tong Yang",
+      "Jianan Ji",
+      "Gaogang Xie",
+      "Weizhe Zhang",
+      "Minlan Yu"
+    ],
+    "venue": "ICDE",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/ICDE60146.2024.00366",
+    "description": "Bit-level counter adjustment makes sketches more memory-efficient while preserving fast updates.",
+    "selected": true,
+    "links": {
+      "Paper": "https://doi.org/10.1109/ICDE60146.2024.00366",
+      "PDF": "https://wenjunli.com/BitMatcher/BitMatcher_ICDE2024_CR.pdf",
+      "Code": "https://github.com/wenjunpaper/BitMatcher"
+    },
+    "image": "assets/images/bitmatcher-fig6.png",
+    "image_alt": "BitMatcher data structure and adaptive counter states",
+    "image_width": 726,
+    "image_height": 750
+  },
+  {
+    "id": "bubble-sketch",
+    "title": "Bubble Sketch: A High-performance and Memory-efficient Sketch for Finding Top-k Items in Data Streams",
+    "authors": [
+      "Lu Cao",
+      "Qilong Shi",
+      "Yuxi Liu",
+      "Hanyue Zheng",
+      "Yao Xin",
+      "Wenjun Li",
+      "Tong Yang",
+      "Yangyang Wang",
+      "Yang Xu",
+      "Weizhe Zhang",
+      "Mingwei Xu"
+    ],
+    "venue": "CIKM",
+    "year": 2024,
+    "url": "https://doi.org/10.1145/3627673.3679882",
+    "description": "Memory-efficient top-k detection in data streams using threshold relocation.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3627673.3679882"
+    }
+  },
+  {
+    "id": "cuckoo-counter",
+    "title": "Cuckoo Counter: Adaptive Structure of Counters for Accurate Frequency and Top-k Estimation",
+    "authors": [
+      "Qilong Shi*",
+      "Yuchen Xu*",
+      "Jiuhua Qi*",
+      "Wenjun Li",
+      "Tong Yang",
+      "Yang Xu",
+      "Yi Wang"
+    ],
+    "venue": "IEEE/ACM ToN",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/TNET.2022.3232098",
+    "description": "Adaptive counters based on cuckoo hashing support accurate frequency and top-k estimation.",
+    "selected": true,
+    "links": {
+      "Paper": "https://doi.org/10.1109/TNET.2022.3232098",
+      "PDF": "https://www.wenjunli.com/CuckooCounter/CC_TON.pdf",
+      "Code": "https://github.com/wenjunpaper/CuckooCounter"
+    },
+    "image": "assets/images/cuckoo-counter-fig2.png",
+    "image_alt": "Cuckoo Counter arrays, buckets and entries",
+    "image_width": 657,
+    "image_height": 402
+  },
+  {
+    "id": "sketchint",
+    "title": "SketchINT: Empowering INT with TowerSketch for Per-flow Per-switch Measurement",
+    "authors": [
+      "Kaicheng Yang",
+      "Sheng Long",
+      "Qilong Shi",
+      "Yuanpeng Li",
+      "Zirui Liu",
+      "Yuhan Wu",
+      "Tong Yang",
+      "Zhengyi Jia"
+    ],
+    "venue": "IEEE TPDS",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/TPDS.2023.3303924",
+    "description": "Combining sketches with in-band telemetry enables fine-grained network measurement.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1109/TPDS.2023.3303924"
+    }
+  },
+  {
+    "id": "she",
+    "title": "SHE: A Generic Framework for Data Stream Mining over Sliding Windows",
+    "authors": [
+      "Yuhan Wu*",
+      "Zhuochen Fan*",
+      "Qilong Shi",
+      "Yixin Zhang",
+      "Tong Yang",
+      "Cheng Chen",
+      "Zheng Zhong",
+      "Junnan Li",
+      "Ariel Shtul",
+      "Yaofeng Tu"
+    ],
+    "venue": "ICPP",
+    "year": 2022,
+    "url": "https://doi.org/10.1145/3545008.3545009",
+    "description": "A generic framework for extending data-stream mining to sliding windows.",
+    "selected": false,
+    "links": {
+      "Paper": "https://doi.org/10.1145/3545008.3545009"
+    }
+  }
+]

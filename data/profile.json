@@ -1,0 +1,80 @@
+{
+  "name": "Qilong Shi",
+  "chinese_name": "史奇龙",
+  "email": "sql23@mails.tsinghua.edu.cn",
+  "scholar": "https://scholar.google.com/citations?user=bD5bbAgAAAAJ",
+  "github": "https://github.com/stallone0000",
+  "site_url": "https://stallone0000.github.io/",
+  "updated": "2026-09-24",
+  "bio": [
+    "I am a Ph.D. candidate in Computer Science at Tsinghua University. My research focuses on sketch-based network measurement and data stream mining.",
+    "I also work on large language models, with interests in efficient reasoning, model merging, and supervised fine-tuning. My AI-related research was conducted during my research internship at Qihoo 360 (August 2025–August 2026).",
+    "I received my B.Sc. in Computer Science from Peking University in 2023."
+  ],
+  "education": [
+    {
+      "organization": "Tsinghua University",
+      "role": "Ph.D. in Computer Science",
+      "dates": "2023–2028 (expected)"
+    },
+    {
+      "organization": "Peking University",
+      "role": "B.Sc. in Computer Science",
+      "dates": "2018–2023"
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Qihoo 360",
+      "role": "Research Intern · Large Language Models",
+      "dates": "Aug 2025–Aug 2026",
+      "detail": "Efficient reasoning, model merging, and supervised fine-tuning."
+    },
+    {
+      "organization": "Tsinghua University",
+      "role": "Teaching Assistant · Big Data and Machine Intelligence",
+      "dates": "Fall 2023–Spring 2025",
+      "detail": ""
+    }
+  ],
+  "awards": [
+    {
+      "year": "2025",
+      "title": "Siebel Scholars Award"
+    },
+    {
+      "year": "2024",
+      "title": "Huawei Scholarship, Tsinghua University"
+    },
+    {
+      "year": "2020",
+      "title": "First-Class Undergraduate Scholarship, Peking University"
+    }
+  ],
+  "service": [
+    "Reviewer, ACM SIGKDD 2024, 2025, 2026",
+    "Reviewer, IEEE Transactions on Dependable and Secure Computing"
+  ],
+  "highlights": [
+    {
+      "id": "reasoning-skills",
+      "title": "Reasoning Skills",
+      "subtitle": "Reuse reasoning, reduce tokens"
+    },
+    {
+      "id": "sciencearena",
+      "title": "ScienceArena",
+      "subtitle": "Scientific Olympiad reasoning"
+    },
+    {
+      "id": "heavylocker",
+      "title": "HeavyLocker",
+      "subtitle": "Heavy hitters across streams"
+    },
+    {
+      "id": "bitmatcher",
+      "title": "BitMatcher",
+      "subtitle": "Make every counter bit count"
+    }
+  ]
+}
