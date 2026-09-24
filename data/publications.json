@@ -13,7 +13,7 @@
       "Yangyang Wang",
       "Mingwei Xu"
     ],
-    "venue": "ACM SIGMETRICS",
+    "venue": "SIGMETRICS",
     "year": 2027,
     "status": "accepted",
     "distinction": "Accepted",
@@ -76,7 +76,7 @@
       "Mingwei Xu",
       "Weizhe Zhang"
     ],
-    "venue": "The Web Conference (WWW)",
+    "venue": "WWW",
     "year": 2026,
     "url": "https://doi.org/10.1145/3774904.3792328",
     "description": "A sketch-based approach to detecting jittery flows by filtering infrequent and stable traffic.",
@@ -399,7 +399,7 @@
       "Chao Li",
       "Jianxin Yang"
     ],
-    "venue": "IEEE BigData",
+    "venue": "BigData",
     "year": 2025,
     "url": "https://doi.org/10.1109/BigData66926.2025.11400898",
     "description": "Distilling a large audio transformer into a compact model for edge-based voice control.",

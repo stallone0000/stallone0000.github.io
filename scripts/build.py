@@ -22,12 +22,16 @@ def authors(paper):
                      for a in paper['authors'])
 
 
+def venue_label(paper):
+    distinction = f' ({paper["distinction"]})' if paper.get('distinction') else ''
+    return f'{paper["venue"]}, {paper["year"]}{distinction}'
+
+
 def publication(paper, illustrated=False):
     links = ''.join(f'<a href="{e(url, quote=True)}">{e(label)}</a>' for label, url in paper['links'].items())
-    distinction = f' ({e(paper["distinction"])})' if paper.get('distinction') else ''
     content = f'''<h3><a href="{e(paper['url'], quote=True)}">{e(paper['title'])}</a></h3>
       <p class="paper-authors">{authors(paper)}</p>
-      <p class="venue"><em>{e(paper['venue'])}</em>, {paper['year']}{distinction}</p>
+      <p class="venue">{e(venue_label(paper))}</p>
       <div class="paper-links">{links}</div>'''
     if illustrated:
         content += f'<p class="paper-description">{e(paper["description"])}</p>'
@@ -74,8 +78,12 @@ highlights = []
 for h in profile['highlights']:
     paper = by_id[h['id']]
     img = f'<img src="{e(paper["image"], quote=True)}" alt="" width="320" height="224" loading="lazy">' if paper.get('image') else ''
-    highlights.append(f'<a class="highlight" href="#{paper["id"]}">{img}<strong>{e(h["title"])}</strong><span>{e(paper["venue"])} {paper["year"]}</span><span>{e(h["subtitle"])}</span></a>')
-selected = ''.join(publication(p, illustrated=True) for p in papers if p['selected'])
+    highlights.append(f'<a class="highlight" href="#{paper["id"]}">{img}<strong>{e(h["title"])}</strong><span>{e(venue_label(paper))}</span><span>{e(h["subtitle"])}</span></a>')
+selected_papers = [p for p in papers if p['selected']]
+selected = ''
+for domain, title in [('network', 'Networking'), ('ai', 'Large Language Models (LLMs)')]:
+    group = ''.join(publication(p, illustrated=True) for p in selected_papers if p['domain'] == domain)
+    selected += f'<section class="publication-group" aria-labelledby="{domain}-heading"><h2 id="{domain}-heading">{title}</h2>{group}</section>'
 other = ''.join(publication(p) for p in papers if not p['selected'])
 intro = f'''<header class="intro">
   <div class="intro-copy"><h1>{e(profile['name'])} <span class="chinese-name" lang="zh">{e(profile['chinese_name'])}</span></h1>
@@ -91,7 +99,7 @@ intro = f'''<header class="intro">
 </header>
 <nav class="section-nav" aria-label="On this page"><a href="#research">Publications</a><a href="#more-publications">More Publications</a><a href="#education">Education</a><a href="#teaching">Teaching</a><a href="#service">Service</a></nav>'''
 content = intro + f'''<section aria-labelledby="highlights-heading"><h2 id="highlights-heading">Highlights</h2><div class="highlights">{''.join(highlights)}</div></section>
-<section id="research"><h2>Selected Publications</h2><p class="section-note">* Equal contribution.</p>{selected}</section>
+<section id="research"><h2>Selected Publications</h2><p class="section-note">{len(selected_papers)} papers published or accepted at CCF-A / THU-A venues as first or co-first author.<br>* Equal contribution.</p>{selected}</section>
 <section id="more-publications"><h2>More Publications</h2>{other}</section>''' + background()
 render('index.html', 'Qilong Shi | 史奇龙', content)
 cv = f'''<header class="cv-header"><nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav>

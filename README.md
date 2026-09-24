@@ -35,7 +35,8 @@ python3 -m http.server 8765
 
 - 论文链接指向 DOI、ACL Anthology 或 arXiv 原记录。
 - `*` 标注原文确认的 equal contribution；本人姓名加粗并加下划线。
-- Selected Publications 根据一作／共同一作身份及 `classifications` 中的 CCF-A 或 THU-A 自动生成；其余列入 More Publications。两组和 CV 均按年份倒序。
+- Selected Publications 根据一作／共同一作身份及 `classifications` 中的 CCF-A 或 THU-A 自动生成并统计篇数，包含已发表及已录用论文；分为 Networking 与 Large Language Models (LLMs)，每类按年份倒序。其余列入 More Publications；More Publications 和 CV 均按年份倒序。
+- 会议统一显示简称和年份（如 `SIGMETRICS, 2027`），期刊保留出版组织（如 `IEEE TKDE, 2026`）；Oral、Main Conference 等信息放在年份后的括号中，Highlights、正文和 CV 共用这一格式。
 - 预印本与已录用论文分开标注。ScienceArena 显示 EMNLP 2026 Main Conference，前三位作者共一，依据本人确认与 arXiv 页面／论文脚注。TRS 显示 ACL 2026 (Oral)，保留原始 Anthology 链接。
 - NeuFSD 的最终九人作者名单及 ACM SIGMETRICS 2027 录用信息由本人提供的 Scholar 条目确认，按 THU-A 归入 Selected；未添加尚无可靠链接的 DOI 或公开 PDF。
 - 奖项仅列可确认名称，未使用存在口径差异的排名描述。
