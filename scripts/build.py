@@ -7,22 +7,27 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parents[1]
 profile = json.loads((ROOT / 'data/profile.json').read_text())
-papers = json.loads((ROOT / 'data/publications.json').read_text())
+papers = sorted(json.loads((ROOT / 'data/publications.json').read_text()), key=lambda p: p['year'], reverse=True)
+for paper in papers:
+    is_first = paper['authors'][0].rstrip('*') == profile['name']
+    is_cofirst = profile['name'] + '*' in paper['authors']
+    paper['selected'] = (is_first or is_cofirst) and bool({'CCF-A', 'THU-A'} & set(paper.get('classifications', [])))
 template = Template((ROOT / 'templates/base.html').read_text())
 by_id = {p['id']: p for p in papers}
 e = escape
 
 
 def authors(paper):
-    return ', '.join('<strong>' + e(a) + '</strong>' if a.rstrip('*') == profile['name'] else e(a)
+    return ', '.join('<strong class="self-author">' + e(a) + '</strong>' if a.rstrip('*') == profile['name'] else e(a)
                      for a in paper['authors'])
 
 
 def publication(paper, illustrated=False):
     links = ''.join(f'<a href="{e(url, quote=True)}">{e(label)}</a>' for label, url in paper['links'].items())
+    distinction = f' ({e(paper["distinction"])})' if paper.get('distinction') else ''
     content = f'''<h3><a href="{e(paper['url'], quote=True)}">{e(paper['title'])}</a></h3>
       <p class="paper-authors">{authors(paper)}</p>
-      <p class="venue"><em>{e(paper['venue'])}</em>, {paper['year']}</p>
+      <p class="venue"><em>{e(paper['venue'])}</em>, {paper['year']}{distinction}</p>
       <div class="paper-links">{links}</div>'''
     if illustrated:
         content += f'<p class="paper-description">{e(paper["description"])}</p>'
@@ -36,20 +41,24 @@ def publication(paper, illustrated=False):
     return f'<article class="compact-publication" id="{paper["id"]}">{content}</article>'
 
 
-def entries(key):
+def entries(key, kind=None):
     out = []
     for row in profile[key]:
+        if kind and row.get('kind') != kind:
+            continue
         detail = f'<p class="detail">{e(row["detail"])}</p>' if row.get('detail') else ''
         out.append(f'''<div class="entry"><div><h3>{e(row['organization'])}</h3><p>{e(row['role'])}</p></div>
           <time>{e(row['dates'])}</time>{detail}</div>''')
     return ''.join(out)
 
 
-def background():
+def background(for_cv=False):
     awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'])
     service = ''.join(f'<li>{e(s)}</li>' for s in profile['service'])
+    experience = (f'<section id="experience"><h2>Experience</h2>{entries("experience")}</section>' if for_cv else
+                  f'<section id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>')
     return f'''<section id="education"><h2>Education</h2>{entries('education')}</section>
-    <section id="experience"><h2>Experience</h2>{entries('experience')}</section>
+    {experience}
     <section id="honors"><h2>Selected Honors</h2><ul class="award-list">{awards}</ul></section>
     <section id="service"><h2>Academic Service</h2><ul class="service-list">{service}</ul></section>'''
 
@@ -65,7 +74,7 @@ highlights = []
 for h in profile['highlights']:
     paper = by_id[h['id']]
     img = f'<img src="{e(paper["image"], quote=True)}" alt="" width="320" height="224" loading="lazy">' if paper.get('image') else ''
-    highlights.append(f'<a class="highlight" href="#{paper["id"]}">{img}<strong>{e(h["title"])}</strong><span>{e(h["subtitle"])}</span></a>')
+    highlights.append(f'<a class="highlight" href="#{paper["id"]}">{img}<strong>{e(h["title"])}</strong><span>{e(paper["venue"])} {paper["year"]}</span><span>{e(h["subtitle"])}</span></a>')
 selected = ''.join(publication(p, illustrated=True) for p in papers if p['selected'])
 other = ''.join(publication(p) for p in papers if not p['selected'])
 intro = f'''<header class="intro">
@@ -80,9 +89,9 @@ intro = f'''<header class="intro">
     <img class="portrait" src="assets/images/qilong-shi.jpg" alt="Qilong Shi in graduation robes at a library" width="260" height="320" fetchpriority="high">
   </a>
 </header>
-<nav class="section-nav" aria-label="On this page"><a href="#research">Research</a><a href="#more-publications">More Publications</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#service">Service</a></nav>'''
+<nav class="section-nav" aria-label="On this page"><a href="#research">Publications</a><a href="#more-publications">More Publications</a><a href="#education">Education</a><a href="#teaching">Teaching</a><a href="#service">Service</a></nav>'''
 content = intro + f'''<section aria-labelledby="highlights-heading"><h2 id="highlights-heading">Highlights</h2><div class="highlights">{''.join(highlights)}</div></section>
-<section id="research"><h2>Selected Research</h2><p class="section-note">* Equal contribution. My name is shown in bold.</p>{selected}</section>
+<section id="research"><h2>Selected Publications</h2><p class="section-note">* Equal contribution.</p>{selected}</section>
 <section id="more-publications"><h2>More Publications</h2>{other}</section>''' + background()
 render('index.html', 'Qilong Shi | 史奇龙', content)
 cv = f'''<header class="cv-header"><nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav>
@@ -90,7 +99,7 @@ cv = f'''<header class="cv-header"><nav><a href="./">← Homepage</a> · Print t
 <p>Ph.D. candidate · Department of Computer Science · Tsinghua University</p>
 <p><a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a> · <a href="{e(profile['scholar'])}">Google Scholar</a> · <a href="{e(profile['github'])}">GitHub</a></p></header>
 <section><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''
-cv += background() + '<section><h2>Publications &amp; Preprints</h2><p class="section-note">* Equal contribution.</p>' + ''.join(publication(p) for p in papers) + '</section>'
+cv += background(for_cv=True) + '<section><h2>Publications &amp; Preprints</h2><p class="section-note">* Equal contribution.</p>' + ''.join(publication(p) for p in papers) + '</section>'
 render('cv.html', 'CV · Qilong Shi', cv, 'cv')
 render('404.html', 'Page not found · Qilong Shi', '<h1>Page not found</h1><p>This page may have moved. <a href="/">Return to the homepage</a>.</p>')
 (ROOT / '.nojekyll').touch()

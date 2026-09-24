@@ -34,10 +34,13 @@ python3 -m http.server 8765
 资料整理于 2026-09-24。教育、服务和已列论文依据个人简历及公开论文记录；360 实习起止为本人确认的 2025.08–2026.08。AI 相关研究与该实习关联，但不改写各论文的正式署名。
 
 - 论文链接指向 DOI、ACL Anthology 或 arXiv 原记录。
-- `*` 标注公开原文确认的 equal contribution。
-- 预印本与正式论文分开标注。ScienceArena 在本版暂按 arXiv 预印本展示，待正式 proceedings 可核验后更新。
+- `*` 标注原文确认的 equal contribution；本人姓名加粗并加下划线。
+- Selected Publications 根据一作／共同一作身份及 `classifications` 中的 CCF-A 或 THU-A 自动生成；其余列入 More Publications。两组和 CV 均按年份倒序。
+- 预印本与已录用论文分开标注。ScienceArena 显示 EMNLP 2026 Main Conference，前三位作者共一，依据本人确认与 arXiv 页面／论文脚注。TRS 显示 ACL 2026 (Oral)，保留原始 Anthology 链接。
 - 奖项仅列可确认名称，未使用存在口径差异的排名描述。
 - `cv.html` 是根据当前数据生成的公开版 CV；不上传原始私人简历文件。
-- 照片使用本人指定的 `IMG_5491.JPG`，只进行尺寸/编码优化并移除元数据。
+- 照片使用本人指定的 `IMG_5491.JPG`，进行尺寸/编码优化并移除元数据；CSS 在固定画框内按 125% 放大人物。
+- 正文字号 14px、分节标题 22px、姓名 32px，与 Ben 参考站一致。
+- 主页只介绍研究方向，实习经历在 CV 展示；审稿服务依据个人记录，只公开 venue、年份及角色。
 
 素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。Lato 字体自托管，许可见 `assets/fonts/OFL.txt`。

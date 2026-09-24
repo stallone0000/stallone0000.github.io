@@ -18,3 +18,11 @@ Research figures are extracted from the corresponding papers coauthored by Qilon
 
 
 Figures were extracted on 2026-09-24. Original figure content is unchanged; captions are omitted from the thumbnail and sources are linked here and in each publication entry.
+
+## Additional figures (2026-09-24)
+
+- `assets/images/filtering-accelerating-fig5.png`: Fig. 5 from [Filtering and Accelerating, TKDE 2026](https://turbonet.team/HypersistentSketch/HypersistentSketch_TKDE2026.pdf).
+- `assets/images/jittersketch-fig4.png`: Fig. 4 from [JitterSketch, WWW 2026](https://turbonet.team/JitterSketch/JitterSketch_WWW2026.pdf).
+- `assets/images/cooled-kll-fig3.png`: Fig. 3 from the author's camera-ready copy of [Cooled-KLL, KDD 2025](https://doi.org/10.1145/3711896.3736894).
+
+These are original paper figures rendered from PDF, with surrounding captions removed; diagram content is unchanged.

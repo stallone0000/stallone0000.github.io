@@ -8,7 +8,7 @@
   "updated": "2026-09-24",
   "bio": [
     "I am a Ph.D. candidate in Computer Science at Tsinghua University. My research focuses on sketch-based network measurement and data stream mining.",
-    "I also work on large language models, with interests in efficient reasoning, model merging, and supervised fine-tuning. My AI-related research was conducted during my research internship at Qihoo 360 (August 2025–August 2026).",
+    "I also work on large language models, with a focus on efficient reasoning, reusable reasoning skills, model merging, and supervised fine-tuning.",
     "I received my B.Sc. in Computer Science from Peking University in 2023."
   ],
   "education": [
@@ -28,13 +28,15 @@
       "organization": "Qihoo 360",
       "role": "Research Intern · Large Language Models",
       "dates": "Aug 2025–Aug 2026",
-      "detail": "Efficient reasoning, model merging, and supervised fine-tuning."
+      "detail": "Efficient reasoning, model merging, and supervised fine-tuning.",
+      "kind": "internship"
     },
     {
       "organization": "Tsinghua University",
       "role": "Teaching Assistant · Big Data and Machine Intelligence",
       "dates": "Fall 2023–Spring 2025",
-      "detail": ""
+      "detail": "",
+      "kind": "teaching"
     }
   ],
   "awards": [
@@ -52,29 +54,34 @@
     }
   ],
   "service": [
-    "Reviewer, ACM SIGKDD 2024, 2025, 2026",
-    "Reviewer, IEEE Transactions on Dependable and Secure Computing"
+    "Program Committee, IEEE ICDM 2026 (Teen Track)",
+    "Reviewer, ACM SIGKDD 2024, 2025, 2026, 2027",
+    "Reviewer, ACM WSDM",
+    "Reviewer, IEEE Transactions on Dependable and Secure Computing",
+    "Reviewer, The VLDB Journal (2026)",
+    "Reviewer, PLOS ONE (2026)",
+    "Reviewer, Cluster Computing (2026)"
   ],
   "highlights": [
-    {
-      "id": "reasoning-skills",
-      "title": "Reasoning Skills",
-      "subtitle": "Reuse reasoning, reduce tokens"
-    },
     {
       "id": "sciencearena",
       "title": "ScienceArena",
       "subtitle": "Scientific Olympiad reasoning"
     },
     {
-      "id": "heavylocker",
-      "title": "HeavyLocker",
-      "subtitle": "Heavy hitters across streams"
+      "id": "reasoning-skills",
+      "title": "Reasoning Skills",
+      "subtitle": "Reuse reasoning, reduce tokens"
     },
     {
-      "id": "bitmatcher",
-      "title": "BitMatcher",
-      "subtitle": "Make every counter bit count"
+      "id": "filtering",
+      "title": "Filtering & Accelerating",
+      "subtitle": "Efficient persistence estimation"
+    },
+    {
+      "id": "cooled-kll",
+      "title": "Cooled-KLL",
+      "subtitle": "More accurate quantiles"
     }
   ]
 }
