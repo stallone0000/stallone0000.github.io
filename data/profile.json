@@ -74,14 +74,14 @@
       "subtitle": "Reuse reasoning, reduce tokens"
     },
     {
+      "id": "neufsd",
+      "title": "NeuFSD",
+      "subtitle": "Neural flow-size decoding"
+    },
+    {
       "id": "filtering",
       "title": "Filtering & Accelerating",
       "subtitle": "Efficient persistence estimation"
-    },
-    {
-      "id": "cooled-kll",
-      "title": "Cooled-KLL",
-      "subtitle": "More accurate quantiles"
     }
   ]
 }

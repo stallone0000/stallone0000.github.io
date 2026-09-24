@@ -26,3 +26,5 @@ Figures were extracted on 2026-09-24. Original figure content is unchanged; capt
 - `assets/images/cooled-kll-fig3.png`: Fig. 3 from the author's camera-ready copy of [Cooled-KLL, KDD 2025](https://doi.org/10.1145/3711896.3736894).
 
 These are original paper figures rendered from PDF, with surrounding captions removed; diagram content is unchanged.
+
+- `assets/images/neufsd-structure.png`: original architecture figure supplied in the author's NeuFSD source, rendered from its vector PDF with surrounding whitespace removed. Diagram content is unchanged. [NeuFSD code](https://github.com/NeuFSD/NeuFSD1).

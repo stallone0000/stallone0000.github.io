@@ -1,5 +1,37 @@
 [
   {
+    "id": "neufsd",
+    "title": "NeuFSD: Rethinking Flow Size Distribution via Neural Decoding",
+    "authors": [
+      "Qilong Shi",
+      "Pinze Ren",
+      "Yufei Li",
+      "Dayu Wang",
+      "Yaoming Li",
+      "Yuanyuan Zhang",
+      "Tong Yang",
+      "Yangyang Wang",
+      "Mingwei Xu"
+    ],
+    "venue": "ACM SIGMETRICS",
+    "year": 2027,
+    "status": "accepted",
+    "distinction": "Accepted",
+    "url": "https://github.com/NeuFSD/NeuFSD1",
+    "description": "Neural decoding estimates flow-size distributions directly from sketch counters.",
+    "links": {
+      "Code": "https://github.com/NeuFSD/NeuFSD1"
+    },
+    "classifications": [
+      "THU-A"
+    ],
+    "domain": "network",
+    "image": "assets/images/neufsd-structure.png",
+    "image_alt": "NeuFSD insertion pipeline and neural decoding architecture",
+    "image_width": 2753,
+    "image_height": 964
+  },
+  {
     "id": "filtering",
     "title": "Filtering and Accelerating: A Unified Framework for High-Performance Persistence Estimation",
     "authors": [
