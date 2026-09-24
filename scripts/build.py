@@ -86,7 +86,7 @@ for domain, title in [('network', 'Networking'), ('ai', 'Large Language Models (
     selected += f'<section class="publication-group" aria-labelledby="{domain}-heading"><h2 id="{domain}-heading">{title}</h2>{group}</section>'
 other = ''.join(publication(p) for p in papers if not p['selected'])
 intro = f'''<header class="intro">
-  <div class="intro-copy"><h1>{e(profile['name'])} <span class="chinese-name" lang="zh">{e(profile['chinese_name'])}</span></h1>
+  <div class="intro-copy"><h1>{e(profile['name'])} <span class="chinese-name" lang="zh">({e(profile['chinese_name'])})</span></h1>
     {bio}
     <nav class="contact-links" aria-label="Contact and profiles">
       <a href="mailto:{e(profile['email'])}">Email</a><a href="cv.html">CV</a>
@@ -103,7 +103,7 @@ content = intro + f'''<section aria-labelledby="highlights-heading"><h2 id="high
 <section id="more-publications"><h2>More Publications</h2>{other}</section>''' + background()
 render('index.html', 'Qilong Shi | 史奇龙', content)
 cv = f'''<header class="cv-header"><nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav>
-<h1>{e(profile['name'])} <span class="chinese-name" lang="zh">{e(profile['chinese_name'])}</span></h1>
+<h1>{e(profile['name'])} <span class="chinese-name" lang="zh">({e(profile['chinese_name'])})</span></h1>
 <p>Ph.D. candidate · Department of Computer Science · Tsinghua University</p>
 <p><a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a> · <a href="{e(profile['scholar'])}">Google Scholar</a> · <a href="{e(profile['github'])}">GitHub</a></p></header>
 <section><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''

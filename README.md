@@ -44,7 +44,7 @@ python3 -m http.server 8765
 - BitMatcher获2024年广东省计算机学会优秀论文一等奖，本人已确认；荣誉列表和论文备注均有标注。组织英文名采用[学会官网](https://www.gdcomf.com/gyxh/xhjj)的 Computer Academy of Guangdong，论文奖另有[共同作者公开资料](https://www.wenjunli.com/newstudent/ForNewStudent.pdf)支持。
 - `cv.html` 是根据当前数据生成的公开版 CV；不上传原始私人简历文件。
 - 照片使用本人指定的 `IMG_5491.JPG`，进行尺寸/编码优化并移除元数据；CSS 在固定画框内按 125% 放大人物。
-- 正文字号 14px、分节标题 22px、姓名 32px，与 Ben 参考站一致。
+- 正文字号 14px、分节标题 22px、英文姓名 32px，与 Ben 参考站一致；中文姓名按本人要求为 24px、常规字重并加括号。
 - 主页只介绍研究方向，实习经历在 CV 展示；审稿服务依据个人记录，只公开 venue、年份及角色。
 
 素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。Lato 字体自托管，许可见 `assets/fonts/OFL.txt`。

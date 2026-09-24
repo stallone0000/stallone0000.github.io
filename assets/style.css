@@ -29,7 +29,7 @@ section { margin-top: 45px; }
 .page { width: min(860px, 100%); padding: 48px 28px 24px; margin: 0 auto; }
 .intro { display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: center; gap: 34px; }
 .intro h1 { text-align: center; }
-.chinese-name { font-size: 32px; margin-left: 8px; white-space: nowrap; }
+.chinese-name { font-size: 24px; font-weight: 400; margin-left: 8px; white-space: nowrap; }
 .portrait { width: 260px; height: 320px; object-fit: cover; object-position: 53% 50%; display: block; transform: scale(1.25); transform-origin: 53% 38%; }
 .portrait-link { display: block; width: 260px; height: 320px; overflow: hidden; }
 .contact-links { display: flex; justify-content: center; gap: 8px 12px; flex-wrap: wrap; margin: 22px 0 0; }
@@ -84,7 +84,6 @@ footer p { margin-bottom: 8px; }
   .portrait-link { width: 210px; height: 245px; margin: 0 auto; }
   .portrait { width: 210px; height: 245px; }
   h1 { font-size: 32px; }
-  .chinese-name { font-size: 32px; }
   .section-nav { justify-content: center; gap: 9px 17px; }
   .highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .highlight img { height: 120px; }
