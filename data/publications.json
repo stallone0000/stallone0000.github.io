@@ -137,8 +137,10 @@
       "Xiangzheng Zhang",
       "Tong Yang"
     ],
-    "venue": "arXiv preprint",
+    "venue": "NeurIPS",
     "year": 2026,
+    "status": "accepted",
+    "distinction": "Accepted",
     "url": "https://arxiv.org/abs/2602.11717",
     "description": "Sparse, distribution-aware updates reduce functional interference during model merging.",
     "links": {
@@ -148,7 +150,9 @@
     "image_alt": "Repetition rates for model-merging methods reported in the paper",
     "image_width": 723,
     "image_height": 372,
-    "classifications": [],
+    "classifications": [
+      "CCF-A"
+    ],
     "domain": "ai"
   },
   {
