@@ -19,8 +19,8 @@ template = Template((ROOT / 'templates/base.html').read_text())
 by_id = {p['id']: p for p in papers}
 e = escape
 name = f'{e(profile["name"])} <span class="chinese-name" lang="zh">({e(profile["chinese_name"])})</span>'
-groups = [('ai', 'Large Language Models (LLMs)'), ('network', 'Networking')]
-count_note = f'{len(selected_papers)} papers published or accepted at CCF-A / THU-A venues as first or co-first author.'
+groups = [('ai', 'LLMs'), ('network', 'Network Measurement')]
+count_note = f'{len(selected_papers)} first- or co-first-author papers at CCF-A / THU-A venues.'
 
 
 def authors(paper):
@@ -29,17 +29,18 @@ def authors(paper):
 
 
 def venue_label(paper):
-    distinction = f' ({paper["distinction"]})' if paper.get('distinction') else ''
-    return f'{paper["venue"]}, {paper["year"]}{distinction}'
+    abbreviations = {'IEEE TKDE': 'TKDE', 'IEEE/ACM ToN': 'ToN',
+                     'IEEE TPDS': 'TPDS', 'arXiv preprint': 'arXiv'}
+    venue = abbreviations.get(paper['venue'], paper['venue'])
+    return f"{venue}'{paper['year'] % 100:02d}"
 
 
 def publication(paper):
     links = ''.join(f'<a href="{e(url, quote=True)}">[{e(label)}]</a>' for label, url in paper['links'].items())
     note = f'<p class="paper-note">{e(paper["note"])}</p>' if paper.get('note') else ''
     return f'''<article class="compact-publication" id="{paper['id']}">
-      <h4><strong>[{e(paper['venue'])}]</strong> <a href="{e(paper['url'], quote=True)}">{e(paper['title'])}</a></h4>
+      <h4><strong>[{e(venue_label(paper))}]</strong> <a href="{e(paper['url'], quote=True)}">{e(paper['title'])}</a></h4>
       <p class="paper-authors">{authors(paper)}</p>
-      <p class="venue">{e(venue_label(paper))}</p>
       <div class="paper-links">{links}</div>{note}
     </article>'''
 
@@ -71,6 +72,7 @@ def render(file, title, content, page_class=''):
         title=e(title), description=e('Qilong Shi · Tsinghua University. Research in network measurement, data stream mining, and large language models.'),
         canonical=profile['site_url'] + (file if file != 'index.html' else ''),
         content=content, page_class=page_class,
+        footer='' if file == 'index.html' else '<footer><p>© 2026 Qilong Shi · Updated October 2026</p><p>Style inspired by <a href="https://yindazhang.github.io/">Yinda Zhang</a> · <a href="https://github.com/stallone0000/stallone0000.github.io">Source</a></p></footer>',
         home_current=' aria-current="page"' if file == 'index.html' else '',
         publications_current=' aria-current="page"' if file == 'publications.html' else '')
     (ROOT / file).write_text(page)
@@ -83,18 +85,16 @@ intro = f'''<header class="intro"><h1>{name}</h1>
     <span class="profile-links">[<a href="cv.html">Resume</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
   </p></header><hr>'''
 selected = ''
-for domain, title in groups:
+for group in presentation['groups']:
     items = []
-    for paper in selected_papers:
-        if paper['domain'] != domain:
-            continue
-        topic, short_name = presentation[paper['id']]
-        items.append(f'<li id="{paper["id"]}">{e(topic)} [<a href="publications.html#{paper["id"]}">{e(short_name)}, {e(venue_label(paper))}</a>]</li>')
-    selected += f'<section class="research-group" aria-labelledby="{domain}-heading"><h3 id="{domain}-heading">{title}</h3><ul class="research-list">{"".join(items)}</ul></section>'
-content = intro + f'''<section id="research"><h2>Selected Publications</h2>
-<p class="section-note">{count_note}</p>{selected}
-<p class="more-link" id="more-publications">[<a href="publications.html">All publications</a>] [<a href="publications.html#more-publications">More publications</a>]</p>
-</section><hr>''' + background()
+    for topic in group['topics']:
+        citations = []
+        for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
+            short_name = presentation['short_names'][paper['id']]
+            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="publications.html#{paper["id"]}">{e(short_name)}, {e(venue_label(paper))}</a>]</span>')
+        items.append(f'<li>{e(topic["label"])} {" ".join(citations)}</li>')
+    selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
+content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
 render('index.html', 'Qilong Shi | 史奇龙', content)
 
 highlights = []

@@ -1,12 +1,37 @@
 {
-  "neufsd": ["Neural decoding of flow-size distributions", "NeuFSD"],
-  "filtering": ["High-performance persistence estimation", "Filtering & Accelerating"],
-  "jittersketch": ["Detecting jittery flows in network streams", "JitterSketch"],
-  "reasoning-skills": ["Efficient reasoning with reusable skills", "TRS"],
-  "sciencearena": ["Scientific Olympiad reasoning evaluation", "ScienceArena"],
-  "heavylocker": ["Heavy hitters in distributed data streams", "HeavyLocker"],
-  "cooled-kll": ["Quantile estimation with hot-item filtering", "Cooled-KLL"],
-  "hypersistent": ["Persistence estimation via item separation", "Hypersistent Sketch"],
-  "bitmatcher": ["Memory-efficient sketch counters", "BitMatcher"],
-  "cuckoo-counter": ["Adaptive counters for frequency and top-k estimation", "Cuckoo Counter"]
+  "short_names": {
+    "neufsd": "NeuFSD",
+    "filtering": "Filtering & Accelerating",
+    "jittersketch": "JitterSketch",
+    "reasoning-skills": "TRS",
+    "sciencearena": "ScienceArena",
+    "scf": "SCF",
+    "voice-control": "Edge-Optimized Voice Control",
+    "heavylocker": "HeavyLocker",
+    "cooled-kll": "Cooled-KLL",
+    "hypersistent": "Hypersistent Sketch",
+    "bitmatcher": "BitMatcher",
+    "cuckoo-counter": "Cuckoo Counter"
+  },
+  "groups": [
+    {
+      "id": "ai",
+      "title": "LLMs",
+      "topics": [
+        {"label": "Efficient reasoning with reusable skills", "papers": ["reasoning-skills"]},
+        {"label": "Scientific reasoning evaluation", "papers": ["sciencearena"]},
+        {"label": "Model merging", "papers": ["scf"]},
+        {"label": "Knowledge distillation for edge models", "papers": ["voice-control"]}
+      ]
+    },
+    {
+      "id": "network",
+      "title": "Network Measurement",
+      "topics": [
+        {"label": "Learning-based measurement", "papers": ["neufsd"]},
+        {"label": "Flow dynamics and persistence", "papers": ["filtering", "jittersketch", "hypersistent"]},
+        {"label": "Frequency, heavy hitters, and quantiles", "papers": ["heavylocker", "cooled-kll", "bitmatcher", "cuckoo-counter"]}
+      ]
+    }
+  ]
 }
