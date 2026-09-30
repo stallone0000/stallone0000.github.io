@@ -1,0 +1,12 @@
+{
+  "neufsd": ["Neural decoding of flow-size distributions", "NeuFSD"],
+  "filtering": ["High-performance persistence estimation", "Filtering & Accelerating"],
+  "jittersketch": ["Detecting jittery flows in network streams", "JitterSketch"],
+  "reasoning-skills": ["Efficient reasoning with reusable skills", "TRS"],
+  "sciencearena": ["Scientific Olympiad reasoning evaluation", "ScienceArena"],
+  "heavylocker": ["Heavy hitters in distributed data streams", "HeavyLocker"],
+  "cooled-kll": ["Quantile estimation with hot-item filtering", "Cooled-KLL"],
+  "hypersistent": ["Persistence estimation via item separation", "Hypersistent Sketch"],
+  "bitmatcher": ["Memory-efficient sketch counters", "BitMatcher"],
+  "cuckoo-counter": ["Adaptive counters for frequency and top-k estimation", "Cuckoo Counter"]
+}
