@@ -44,6 +44,7 @@ python3 -m http.server 8765
 - Beyond Parameter Arithmetic 的 NeurIPS 2026 录用由本人于2026-09-25确认，数据记录为 NeurIPS 2026 Accepted，页面显示为 `NeurIPS'26`；保留 arXiv 论文链接。根据现有作者顺序，本人非一作/共一，仍列入 More Publications。
 - NeuFSD 的最终九人作者名单及 ACM SIGMETRICS 2027 录用信息由本人提供的 Scholar 条目确认，按 THU-A 归入 Selected；未添加尚无可靠链接的 DOI 或公开 PDF。
 - 奖项仅列可确认名称，未使用存在口径差异的排名描述。
+- 2026 年清华大学国家奖学金及全校 Top 1% 由本人于 2026-10-06 确认，列在网页 CV 的 Selected Honors 首位。
 - 本人确认入选2026年IETF菁才计划，按“Selected Participant”列入荣誉。个人验收报告明确身份为“IETF 125 New Participants 资助计划参与者”，报名材料明确时间为2026年3月，故附注 New Participants。项目全称与资助性质见[中国互联网协会官方通知](https://www.isc.org.cn/article/27269689823457280.html)，本人姓名与清华单位可见[IETF 125官方参会记录](https://datatracker.ietf.org/doc/bluesheets-125-newparticipant-202603150130/00/)。Elite Talent Program 为英文表述，保留菁才计划中文名以便对应；未公开原始个人材料。
 - BitMatcher获2024年广东省计算机学会优秀论文一等奖，本人已确认；荣誉列表和论文备注均有标注。组织英文名采用[学会官网](https://www.gdcomf.com/gyxh/xhjj)的 Computer Academy of Guangdong，论文奖另有[共同作者公开资料](https://www.wenjunli.com/newstudent/ForNewStudent.pdf)支持。
 - `cv.html` 是根据当前数据生成的公开版 CV；不上传原始私人简历文件。
