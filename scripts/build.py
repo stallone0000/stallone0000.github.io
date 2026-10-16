@@ -91,7 +91,8 @@ for group in presentation['groups']:
         citations = []
         for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
             short_name = presentation['short_names'][paper['id']]
-            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="publications.html#{paper["id"]}">{e(short_name)}, {e(venue_label(paper))}</a>]</span>')
+            label = short_name if paper['id'] in presentation.get('hide_venue', []) else f'{short_name}, {venue_label(paper)}'
+            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="publications.html#{paper["id"]}">{e(label)}</a>]</span>')
         links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
         items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
