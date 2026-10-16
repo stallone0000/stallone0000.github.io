@@ -12,7 +12,7 @@ presentation = json.loads((ROOT / 'data/presentation.json').read_text())
 for paper in papers:
     is_first = paper['authors'][0].rstrip('*') == profile['name']
     is_cofirst = profile['name'] + '*' in paper['authors']
-    paper['selected'] = (is_first or is_cofirst) and bool({'CCF-A', 'THU-A'} & set(paper.get('classifications', [])))
+    paper['selected'] = paper.get('selected_override', False) or ((is_first or is_cofirst) and bool({'CCF-A', 'THU-A'} & set(paper.get('classifications', []))))
 selected_papers = [p for p in papers if p['selected']]
 other_papers = [p for p in papers if not p['selected']]
 template = Template((ROOT / 'templates/base.html').read_text())
@@ -20,7 +20,7 @@ by_id = {p['id']: p for p in papers}
 e = escape
 name = f'{e(profile["name"])} <span class="chinese-name" lang="zh">({e(profile["chinese_name"])})</span>'
 groups = [('ai', 'LLMs'), ('network', 'Network Measurement')]
-count_note = f'{len(selected_papers)} first- or co-first-author papers at CCF-A / THU-A venues.'
+count_note = f'{len(selected_papers)} selected papers at CCF-A / THU-A venues.'
 
 
 def authors(paper):
@@ -57,7 +57,7 @@ def entries(key, kind=None):
 
 
 def background(for_cv=False):
-    awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'])
+    awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'] if not for_cv or a.get('show_in_cv', True))
     service = ''.join(f'<li>{e(s)}</li>' for s in profile['service'])
     experience = (f'<section class="background-section" id="experience"><h2>Experience</h2>{entries("experience")}</section>' if for_cv else
                   f'<section class="background-section" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>')
@@ -92,7 +92,8 @@ for group in presentation['groups']:
         for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
             short_name = presentation['short_names'][paper['id']]
             citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="publications.html#{paper["id"]}">{e(short_name)}, {e(venue_label(paper))}</a>]</span>')
-        items.append(f'<li>{e(topic["label"])} {" ".join(citations)}</li>')
+        links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
+        items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
 content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
 render('index.html', 'Qilong Shi | 史奇龙', content)

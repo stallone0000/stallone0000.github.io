@@ -128,14 +128,14 @@
     "title": "Beyond Parameter Arithmetic: Sparse Complementary Fusion for Distribution-Aware Model Merging",
     "authors": [
       "Weihong Lin",
-      "Lin Sun",
       "Qilong Shi",
       "Aomufei Yuan",
       "Yuxuan Tian",
       "Zhengyang Wang",
       "Guangxiang Zhao",
       "Xiangzheng Zhang",
-      "Tong Yang"
+      "Tong Yang",
+      "Lin Sun"
     ],
     "venue": "NeurIPS",
     "year": 2026,
@@ -153,7 +153,8 @@
     "classifications": [
       "CCF-A"
     ],
-    "domain": "ai"
+    "domain": "ai",
+    "selected_override": true
   },
   {
     "id": "reasoning-data",
@@ -248,9 +249,9 @@
     "url": "https://arxiv.org/abs/2503.04872",
     "description": "Branch-Merge distillation combines domain-specific expert knowledge in a general reasoning model.",
     "links": {
-      "Paper": "https://arxiv.org/abs/2503.04872"
+      "Paper": "https://arxiv.org/abs/2503.04872",
+      "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
     },
-    "note": "Updated April 2026; first posted in 2025.",
     "classifications": [],
     "domain": "ai"
   },

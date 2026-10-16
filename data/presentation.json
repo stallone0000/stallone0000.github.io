@@ -11,26 +11,70 @@
     "cooled-kll": "Cooled-KLL",
     "hypersistent": "Hypersistent Sketch",
     "bitmatcher": "BitMatcher",
-    "cuckoo-counter": "Cuckoo Counter"
+    "cuckoo-counter": "Cuckoo Counter",
+    "tinyr1": "TinyR1-32B"
   },
   "groups": [
     {
       "id": "ai",
       "title": "LLMs",
       "topics": [
-        {"label": "Efficient reasoning with reusable skills", "papers": ["reasoning-skills"]},
-        {"label": "Scientific reasoning evaluation", "papers": ["sciencearena"]},
-        {"label": "Model merging", "papers": ["scf"]},
-        {"label": "Knowledge distillation for edge models", "papers": ["voice-control"]}
+        {
+          "label": "Efficient reasoning with reusable skills",
+          "papers": [
+            "reasoning-skills"
+          ]
+        },
+        {
+          "label": "Scientific reasoning evaluation",
+          "papers": [
+            "sciencearena"
+          ]
+        },
+        {
+          "label": "Model merging",
+          "papers": [
+            "scf"
+          ]
+        },
+        {
+          "label": "Reasoning-model distillation",
+          "papers": [
+            "tinyr1"
+          ],
+          "links": {
+            "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
+          }
+        }
       ]
     },
     {
       "id": "network",
       "title": "Network Measurement",
       "topics": [
-        {"label": "Learning-based measurement", "papers": ["neufsd"]},
-        {"label": "Flow dynamics and persistence", "papers": ["filtering", "jittersketch", "hypersistent"]},
-        {"label": "Frequency, heavy hitters, and quantiles", "papers": ["heavylocker", "cooled-kll", "bitmatcher", "cuckoo-counter"]}
+        {
+          "label": "Learning-based measurement",
+          "papers": [
+            "neufsd"
+          ]
+        },
+        {
+          "label": "Flow dynamics and persistence",
+          "papers": [
+            "filtering",
+            "jittersketch",
+            "hypersistent"
+          ]
+        },
+        {
+          "label": "Frequency, heavy hitters, and quantiles",
+          "papers": [
+            "heavylocker",
+            "cooled-kll",
+            "bitmatcher",
+            "cuckoo-counter"
+          ]
+        }
       ]
     }
   ]

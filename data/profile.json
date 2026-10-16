@@ -5,7 +5,7 @@
   "scholar": "https://scholar.google.com/citations?user=bD5bbAgAAAAJ",
   "github": "https://github.com/stallone0000",
   "site_url": "https://stallone0000.github.io/",
-  "updated": "2026-10-06",
+  "updated": "2026-10-16",
   "bio": [
     "I am a Ph.D. candidate in Computer Science at Tsinghua University. My research focuses on sketch-based network measurement and data stream mining.",
     "I also work on large language models, with a focus on efficient reasoning, reusable reasoning skills, model merging, and supervised fine-tuning.",
@@ -42,27 +42,33 @@
   "awards": [
     {
       "year": "2026",
-      "title": "National Scholarship, Tsinghua University (Top 1% university-wide)"
+      "title": "National Scholarship, Tsinghua University (Top 1% university-wide)",
+      "show_in_cv": true
     },
     {
       "year": "2026",
-      "title": "Selected Participant, IETF Elite Talent Program (菁才计划), IETF 125 (New Participants)"
+      "title": "Selected Participant, IETF Elite Talent Program (菁才计划), IETF 125 (New Participants)",
+      "show_in_cv": false
     },
     {
       "year": "2025",
-      "title": "Siebel Scholars Award"
+      "title": "Siebel Scholars Award",
+      "show_in_cv": true
     },
     {
       "year": "2024",
-      "title": "First Prize, Outstanding Paper Award, Computer Academy of Guangdong (BitMatcher)"
+      "title": "First Prize, Outstanding Paper Award, Computer Academy of Guangdong (BitMatcher)",
+      "show_in_cv": false
     },
     {
       "year": "2024",
-      "title": "Huawei Scholarship, Tsinghua University"
+      "title": "Huawei Scholarship, Tsinghua University (1st in department, master's category)",
+      "show_in_cv": true
     },
     {
       "year": "2020",
-      "title": "First-Class Undergraduate Scholarship, Peking University"
+      "title": "First-Class Undergraduate Scholarship, Peking University",
+      "show_in_cv": false
     }
   ],
   "service": [

@@ -55,3 +55,11 @@ python3 -m http.server 8765
 素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。当前使用系统 Arial/Helvetica 字体；旧版 Lato 字体与许可仍保留在 `assets/fonts/`。
 
 标签页小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可，图形未经修改。
+
+## 2026-10-16 内容更新
+
+- 本人确认 SCF 的新作者顺序：Weihong Lin、Qilong Shi，其余作者保持相对顺序，Lin Sun 移至末位。arXiv 当前旧版本尚未更新署名；网站按本人提供的最终顺序维护，不添加共同一作标记。
+- SCF 通过 `selected_override` 按本人明确要求纳入 Selected，形成 11 Selected / 8 More；该例外不改变其他论文的筛选规则。Selected 的总数说明不再将全部论文称为一作／共一。
+- 网页 Resume 仅显示国奖、Siebel、华为奖学金，其余荣誉保留在源数据，通过 `show_in_cv` 控制。华为奖学金附注按本人“硕士院系 top 1”表述为院系硕士类别第 1 名。
+- 首页 TinyR1-32B 替换边缘语音控制条目，关联现有 TinyR1-32B-Preview 论文，并附本人指定的 [Hugging Face 模型](https://huggingface.co/qihoo360/TinyR1-32B)入口；完整论文页和网页 CV 也附模型入口。不新增重复论文条目。
+- 移除 TinyR1 的版本更新时间备注。
