@@ -87,12 +87,18 @@ def entries(key, kind=None):
 
 def background(for_cv=False):
     awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'] if not for_cv or a.get('show_in_cv', True))
-    service = ''.join(f'<li>{e(s)}</li>' for s in profile['service'])
+    service = profile['service']
+    committee = ''.join(f'<li>Program Committee, {e(s)}</li>' for s in service['program_committee'])
+    reviewing = ''.join(
+        f'<section aria-labelledby="{key}-heading"><h3 id="{key}-heading">{title}</h3>'
+        f'<ul class="service-list">{"".join(f"<li>{e(s)}</li>" for s in service[key])}</ul></section>'
+        for key, title in [('conference_reviewing', 'Conference Reviewer'), ('journal_reviewing', 'Journal Reviewer')]
+    )
     experience = f'<section class="background-section" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>'
     return f'''<section class="background-section" id="education"><h2>Education</h2>{entries('education')}</section>
     {experience}
     <section class="background-section" id="honors"><h2>Selected Honors</h2><ul class="award-list">{awards}</ul></section>
-    <section class="background-section" id="service"><h2>Academic Service</h2><ul class="service-list">{service}</ul></section>'''
+    <section class="background-section" id="service"><h2>Academic Service</h2><ul class="service-list">{committee}</ul><div class="service-columns">{reviewing}</div></section>'''
 
 
 def render(file, title, content, page_class=''):

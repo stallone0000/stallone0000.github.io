@@ -23,7 +23,7 @@ section, article, [id] { scroll-margin-top: 70px; }
 .navbar { position: fixed; z-index: 20; top: 0; right: 0; left: 0; min-height: 50px; background: #222; border-bottom: 1px solid #080808; font-size: .875rem; font-weight: 400; line-height: 20px; }
 .navbar-container { display: flex; flex-wrap: wrap; align-items: flex-start; }
 .navbar-brand { display: inline-flex; align-items: center; gap: 8px; height: 50px; margin-left: -15px; padding: 0 15px; font-size: 1.125rem; color: #999; }
-.brand-icon { display: block; flex: none; width: 36px; height: 36px; }
+.brand-icon { display: block; flex: none; width: 42px; height: 42px; transform: translateY(2px); }
 .navbar-brand:hover, .navbar-brand:focus { color: #fff; text-decoration: none; }
 .navbar-links { display: flex; }
 .navbar-links a { display: block; padding: 15px; color: #999; }
@@ -59,6 +59,8 @@ section, article, [id] { scroll-margin-top: 70px; }
 .entry p { margin: 0; }
 .entry time { color: var(--muted); }
 .award-list li, .service-list li { margin-bottom: 6px; }
+.service-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; }
+.service-columns .service-list { margin-bottom: 0; }
 .award-list time { margin-right: 10px; }
 .publications-page { width: 100%; }
 .publications-header h1 { font-size: 1.5rem; }
@@ -101,6 +103,7 @@ footer p { margin: 0 0 5px; }
   .visitors-section { align-self: center; max-width: 100%; }
 }
 @media (max-width: 767px) {
+  .service-columns { grid-template-columns: 1fr; }
   .university-logo { height: 36px; }
   .navbar-toggle { display: block; }
   .navbar-links { display: none; flex-basis: calc(100% + 30px); margin: 0 -15px; border-top: 1px solid #101010; padding: 7px 0; }

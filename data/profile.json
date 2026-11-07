@@ -64,17 +64,23 @@
       "show_in_cv": false
     }
   ],
-  "service": [
-    "Program Committee, IEEE ICDM 2026 (Teen Track)",
-    "Reviewer, ICLR 2027",
-    "Reviewer, ACM WWW 2027",
-    "Reviewer, ACM SIGKDD 2024, 2025, 2026, 2027",
-    "Reviewer, ACM WSDM",
-    "Reviewer, IEEE Transactions on Dependable and Secure Computing",
-    "Reviewer, The VLDB Journal (2026)",
-    "Reviewer, PLOS ONE (2026)",
-    "Reviewer, Cluster Computing (2026)"
-  ],
+  "service": {
+    "program_committee": [
+      "IEEE ICDM 2026 (Teen Track)"
+    ],
+    "conference_reviewing": [
+      "ICLR 2027",
+      "ACM WWW 2027",
+      "ACM SIGKDD 2024, 2025, 2026, 2027",
+      "ACM WSDM"
+    ],
+    "journal_reviewing": [
+      "IEEE Transactions on Dependable and Secure Computing",
+      "The VLDB Journal (2026)",
+      "PLOS ONE (2026)",
+      "Cluster Computing (2026)"
+    ]
+  },
   "highlights": [
     {
       "id": "sciencearena",
