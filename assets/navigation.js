@@ -1,3 +1,19 @@
+// Use the page's usable width so visible scrollbars do not unbalance the globe.
+(() => {
+  if (!document.querySelector('.intro-layout.with-globe')) return;
+  const root = document.documentElement;
+  let lastWidth = 0;
+  const syncViewportSpace = () => {
+    const width = root.clientWidth;
+    if (width === lastWidth) return;
+    lastWidth = width;
+    root.style.setProperty('--half-viewport', `${width / 2}px`);
+  };
+  syncViewportSpace();
+  if (window.ResizeObserver) new ResizeObserver(syncViewportSpace).observe(root);
+  else window.addEventListener('resize', syncViewportSpace);
+})();
+
 const header = document.querySelector('.navbar');
 const toggle = document.querySelector('.navbar-toggle');
 function closeNavigation() {
