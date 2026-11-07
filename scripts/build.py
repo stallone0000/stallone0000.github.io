@@ -142,7 +142,7 @@ publication_sections = f'''<section id="publications"><h2>Publications &amp; Pre
 <hr><section id="more-publications"><h2>More Publications</h2>{''.join(publication(p) for p in other_papers)}</section></section>'''
 
 cv = f'''<header class="cv-header">
-<a class="portrait-link" href="assets/images/qilong-shi.jpg" aria-label="View photo of Qilong Shi"><img class="portrait" src="assets/images/qilong-shi.jpg" alt="Qilong Shi in graduation robes at a library" width="180" height="220"></a>
+<a class="portrait-link" href="assets/images/qilong-shi.jpg" aria-label="View photo of Qilong Shi"><img class="portrait" src="assets/images/qilong-shi.jpg" alt="Qilong Shi in graduation robes at a library" width="160" height="196"></a>
 <h1>{name}</h1><p>Ph.D. candidate · Department of Computer Science · Tsinghua University</p>
 <p><a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a></p>
 <p>[<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</p>
