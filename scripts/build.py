@@ -59,8 +59,7 @@ def entries(key, kind=None):
 def background(for_cv=False):
     awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'] if not for_cv or a.get('show_in_cv', True))
     service = ''.join(f'<li>{e(s)}</li>' for s in profile['service'])
-    experience = (f'<section class="background-section" id="experience"><h2>Experience</h2>{entries("experience")}</section>' if for_cv else
-                  f'<section class="background-section" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>')
+    experience = f'<section class="background-section" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>'
     return f'''<section class="background-section" id="education"><h2>Education</h2>{entries('education')}</section>
     {experience}
     <section class="background-section" id="honors"><h2>Selected Honors</h2><ul class="award-list">{awards}</ul></section>
@@ -72,7 +71,7 @@ def render(file, title, content, page_class=''):
         title=e(title), description=e('Qilong Shi · Tsinghua University. Research in network measurement, data stream mining, and large language models.'),
         canonical=profile['site_url'] + (file if file != 'index.html' else ''),
         content=content, page_class=page_class,
-        footer='' if file == 'index.html' else '<footer><p>© 2026 Qilong Shi · Updated October 2026</p><p>Style inspired by <a href="https://yindazhang.github.io/">Yinda Zhang</a> · <a href="https://github.com/stallone0000/stallone0000.github.io">Source</a></p></footer>',
+        footer='' if file == 'index.html' else '<footer><p>© 2026 Qilong Shi · Updated November 2026</p><p>Style inspired by <a href="https://yindazhang.github.io/">Yinda Zhang</a> · <a href="https://github.com/stallone0000/stallone0000.github.io">Source</a></p></footer>',
         home_current=' aria-current="page"' if file == 'index.html' else '',
         publications_current=' aria-current="page"' if file == 'publications.html' else '')
     (ROOT / file).write_text(page)

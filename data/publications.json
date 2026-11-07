@@ -3,9 +3,9 @@
     "id": "neufsd",
     "title": "NeuFSD: Rethinking Flow Size Distribution via Neural Decoding",
     "authors": [
-      "Qilong Shi",
-      "Pinze Ren",
-      "Yufei Li",
+      "Qilong Shi*",
+      "Pinze Ren*",
+      "Yufei Li*",
       "Dayu Wang",
       "Yaoming Li",
       "Yuanyuan Zhang",
@@ -35,8 +35,8 @@
     "id": "filtering",
     "title": "Filtering and Accelerating: A Unified Framework for High-Performance Persistence Estimation",
     "authors": [
-      "Qilong Shi",
-      "Lu Cao",
+      "Qilong Shi*",
+      "Lu Cao*",
       "Weiqiang Xiao",
       "Nianfu Wang",
       "Wenjun Li",
