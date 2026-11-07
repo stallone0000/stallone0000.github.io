@@ -2,7 +2,9 @@
 
 - `assets/images/qilong-shi.jpg`: portrait supplied and selected by Qilong Shi (`IMG_5491.JPG`). Optimized for web delivery; original framing is retained in the file, with responsive CSS cropping on the homepage. Metadata removed.
 - `assets/fonts/lato-regular.woff2`, `lato-bold.woff2`: Lato, served locally from the Google Fonts distribution. SIL Open Font License 1.1 is included at `assets/fonts/OFL.txt`.
-- `assets/favicon.svg`: unmodified OpenMoji “clown face” (U+1F921), by the OpenMoji contributors. [Original SVG](https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F921.svg), [OpenMoji](https://openmoji.org/), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). License text is included at `assets/licenses/openmoji-CC-BY-SA-4.0.txt`; the icon remains under that license.
+- `assets/favicon.svg`: author-supplied OpenMoji “dragon” (U+1F409), used for both the navigation brand and browser tab. The provided bytes match the [original SVG](https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F409.svg) (SHA256 `8ab58824843e8d2fb7e43675223133f12904847c59e8956708940c182bafe4f0`). By the [OpenMoji](https://openmoji.org/) contributors, under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). License text is included at `assets/licenses/openmoji-CC-BY-SA-4.0.txt`; the icon remains under that license.
+- `assets/images/tsinghua-university.svg`: author-supplied `tsinghua-university-seeklogo.svg`. Only the empty canvas was trimmed by changing its viewBox from `0 0 560 400` to `99 142.468 362 115.065`; the complete emblem and wordmark paths are unchanged.
+- `assets/images/peking-university.svg`: unmodified author-supplied `peking-university-seeklogo-3.svg`, retaining the complete emblem and wordmark. The two university marks appear next to the homepage name, Tsinghua first and Peking second, with equal display heights. They are separate university assets and are not covered by the OpenMoji license.
 
 Research figures are extracted from the corresponding papers coauthored by Qilong Shi. Their individual sources are recorded below. They illustrate those papers only and are not generic template assets.
 
