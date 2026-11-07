@@ -56,4 +56,4 @@ Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，�
 - 改版前的完整备份：[2026-09-30 旧版](https://github.com/stallone0000/stallone0000.github.io/releases/tag/ben-style-2026-09-30)。恢复说明见 [docs/RESTORE.md](docs/RESTORE.md)。
 - 恢复旧风格时须保留现行公开资料范围和最新论文数据，避免用过时履历覆盖当前版本。
 
-素材与论文图来源见 [docs/ASSETS.md](docs/ASSETS.md)。正文使用系统 Arial/Helvetica，旧 Lato 字体及许可保留在 `assets/fonts/`。导航栏和浏览器标签页使用同一份 [OpenMoji](https://openmoji.org/) 龙图标（U+1F409），采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。首页姓名、清华校标、北大校标为三个独立元素，桌面端等间距占满简介文字列，北大校标与文字右边界对齐；校标等高48px。窄屏校标为36px，必要时姓名单独一行、两校标分列左右。启用访客地球时会请求 RevolverMaps2 及其脚本依赖。
+素材与论文图来源见 [docs/ASSETS.md](docs/ASSETS.md)。正文使用系统 Arial/Helvetica，旧 Lato 字体及许可保留在 `assets/fonts/`。导航栏和浏览器标签页使用同一份 [OpenMoji](https://openmoji.org/) 龙图标（U+1F409），采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可，导航图标为36px。首页姓名、清华校标、北大校标为三个独立元素，桌面端等间距排列，整组约占简介文字列的2/3宽；较窄桌面保留至少16px间隔，平板和手机使用整列宽度。校标等高48px，窄屏为36px，必要时姓名单独一行、两校标分列左右。启用访客地球时会请求 RevolverMaps2 及其脚本依赖。
