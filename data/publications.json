@@ -20,7 +20,7 @@
     "url": "https://github.com/NeuFSD/NeuFSD1",
     "description": "Neural decoding estimates flow-size distributions directly from sketch counters.",
     "links": {
-      "GitHub": "https://github.com/stallone0000/NeuFSD"
+      "Code": "https://github.com/stallone0000/NeuFSD"
     },
     "classifications": [
       "THU-A"
@@ -51,7 +51,7 @@
     "url": "https://doi.org/10.1109/TKDE.2026.3695579",
     "description": "A unified filtering and acceleration framework for high-performance persistence estimation.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/HypersistentSketch"
+      "Code": "https://github.com/wenjunpaper/HypersistentSketch"
     },
     "classifications": [
       "CCF-A"
@@ -82,7 +82,7 @@
     "url": "https://doi.org/10.1145/3774904.3792328",
     "description": "A sketch-based approach to detecting jittery flows by filtering infrequent and stable traffic.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/JitterSketch"
+      "Code": "https://github.com/wenjunpaper/JitterSketch"
     },
     "classifications": [
       "CCF-A"
@@ -110,7 +110,7 @@
     "url": "https://aclanthology.org/2026.acl-industry.154/",
     "description": "Retrieve and reuse reasoning skills to reduce redundant reasoning and improve accuracy.",
     "links": {
-      "GitHub": "https://github.com/stallone0000/Reasoning-Skill",
+      "Code": "https://github.com/stallone0000/Reasoning-Skill",
       "Demo": "https://reasoning-skill.onrender.com/"
     },
     "image": "assets/images/thinking-with-reasoning-skills-fig2.png",
@@ -172,7 +172,7 @@
     "url": "https://arxiv.org/abs/2606.02113",
     "description": "A study of reasoning data for post-training large language models.",
     "links": {
-      "GitHub": "https://github.com/RenBing-Sumeru/Awesome-LLM-Reasoning-Data",
+      "Code": "https://github.com/RenBing-Sumeru/Awesome-LLM-Reasoning-Data",
       "Demo": "https://renbing-sumeru.github.io/Awesome-LLM-Reasoning-Data/"
     },
     "classifications": [],
@@ -205,7 +205,7 @@
     "url": "https://arxiv.org/abs/2608.30517",
     "description": "Evaluating large language models on recent scientific Olympiad competitions.",
     "links": {
-      "GitHub": "https://github.com/stallone0000/Science-Arena",
+      "Code": "https://github.com/stallone0000/Science-Arena",
       "Demo": "https://science-arena.onrender.com/"
     },
     "image": "assets/images/sciencearena-fig1.png",
@@ -239,7 +239,7 @@
     "url": "https://turbonet.team/HeavyMatcher/",
     "description": "Entry merging, evolution and cuckoo hashing enable accurate top-k detection in compact linear space.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/HeavyMatcher"
+      "Code": "https://github.com/wenjunpaper/HeavyMatcher"
     },
     "classifications": [],
     "domain": "network",
@@ -298,7 +298,7 @@
     "url": "https://doi.org/10.1145/3690624.3709167",
     "description": "A latching mechanism for accurate heavy-hitter detection in local and distributed data streams.",
     "links": {
-      "GitHub": "https://github.com/HeavyLocker/HeavyLockerSketch"
+      "Code": "https://github.com/HeavyLocker/HeavyLockerSketch"
     },
     "image": "assets/images/heavylocker-fig3.png",
     "image_alt": "HeavyLocker buckets and lock-bit structure",
@@ -328,7 +328,9 @@
     "year": 2025,
     "url": "https://doi.org/10.1145/3711896.3736894",
     "description": "Filtering hot items improves the accuracy and memory efficiency of KLL quantile estimation.",
-    "links": {},
+    "links": {
+      "Code": "https://github.com/Cooled-KLL/Cooled-KLL-Sketch"
+    },
     "classifications": [
       "CCF-A"
     ],
@@ -357,7 +359,7 @@
     "url": "https://doi.org/10.1109/ICDE65448.2025.00227",
     "description": "Fast item separation improves the accuracy and throughput of persistence estimation.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/HypersistentSketch"
+      "Code": "https://github.com/wenjunpaper/HypersistentSketch"
     },
     "image": "assets/images/hypersistent-sketch-fig5.png",
     "image_alt": "Hypersistent Sketch burst filter, cold filter and hot-part pipeline",
@@ -387,7 +389,7 @@
     "url": "https://doi.org/10.1145/3711896.3737094",
     "description": "A layered sketch for finding persistent, sparse flows in network streams.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/PSSketch"
+      "Code": "https://github.com/wenjunpaper/PSSketch"
     },
     "classifications": [
       "CCF-A"
@@ -457,7 +459,7 @@
     "url": "https://doi.org/10.1109/ICDE60146.2024.00366",
     "description": "Bit-level counter adjustment makes sketches more memory-efficient while preserving fast updates.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/BitMatcher"
+      "Code": "https://github.com/wenjunpaper/BitMatcher"
     },
     "image": "assets/images/bitmatcher-fig6.png",
     "image_alt": "BitMatcher data structure and adaptive counter states",
@@ -490,7 +492,7 @@
     "url": "https://doi.org/10.1145/3627673.3679882",
     "description": "Memory-efficient top-k detection in data streams using threshold relocation.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/BubbleSketch"
+      "Code": "https://github.com/wenjunpaper/BubbleSketch"
     },
     "classifications": [],
     "domain": "network",
@@ -513,7 +515,7 @@
     "url": "https://doi.org/10.1109/TNET.2022.3232098",
     "description": "Adaptive counters based on cuckoo hashing support accurate frequency and top-k estimation.",
     "links": {
-      "GitHub": "https://github.com/wenjunpaper/CuckooCounter"
+      "Code": "https://github.com/wenjunpaper/CuckooCounter"
     },
     "image": "assets/images/cuckoo-counter-fig2.png",
     "image_alt": "Cuckoo Counter arrays, buckets and entries",
@@ -543,7 +545,7 @@
     "url": "https://doi.org/10.1109/TPDS.2023.3303924",
     "description": "Combining sketches with in-band telemetry enables fine-grained network measurement.",
     "links": {
-      "GitHub": "https://github.com/SketchINT-code/SketchINT"
+      "Code": "https://github.com/SketchINT-code/SketchINT"
     },
     "classifications": [
       "CCF-A"
@@ -571,7 +573,7 @@
     "url": "https://doi.org/10.1145/3545008.3545009",
     "description": "A generic framework for extending data-stream mining to sliding windows.",
     "links": {
-      "GitHub": "https://github.com/Sliding-Hardware-Estimator/SlidingHardwareEstimator"
+      "Code": "https://github.com/Sliding-Hardware-Estimator/SlidingHardwareEstimator"
     },
     "classifications": [],
     "domain": "network",

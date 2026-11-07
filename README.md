@@ -25,7 +25,7 @@ python3 -m http.server 8765
 - 导航只有 Home 和 Full CV；旧 Publications 地址会保留查询参数和论文锚点，跳转至同一份完整简历。
 - 首页每个论文链接进入 Full CV 的对应论文位置；Full CV 的蓝色论文题名直接打开站内 PDF。没有 PDF 的题名保持普通文字，不链接到其他文章或错误版本。
 - 首页按研究领域与 venue 分为 LLMs、AI-based Measurement（SIGMETRICS）、Data Mining（ICDE、KDD、TKDE）、Network Measurement（ToN、WWW）；Data Mining 同时展示 PSSketch。首页是手动维护的研究主题概览，Full CV 的 Selected／More 则保留作者身份筛选规则。
-- 论文下方只显示可用的 `[GitHub]`、`[Demo]`、`[Model]` 等补充资源，不再显示 `[Paper]`、`[PDF]`。
+- 论文下方只显示可用的 `[Code]`、`[Demo]`、`[Model]` 等补充资源，不再显示 `[Paper]`、`[PDF]`。
 - Full CV 保留 `Publications & Preprints`、Highlights、Selected Publications、More Publications。Selected 分为 LLMs 与 Network Measurement，每组按年份倒序；其余论文在 More 中按年份倒序。
 - 一作／共同一作且 `classifications` 含 CCF-A 或 THU-A 的论文自动精选；SCF 按本人明确要求以 `selected_override` 纳入，当前 11 Selected / 9 More。该例外不改变作者身份。
 - `*` 表示 equal contribution，署名第一也保留星号。TKDE 2026 前两位、NeuFSD 前三位为共一；本人姓名加粗并加下划线。
