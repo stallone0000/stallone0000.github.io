@@ -12,6 +12,7 @@
     "hypersistent": "Hypersistent Sketch",
     "bitmatcher": "BitMatcher",
     "cuckoo-counter": "Cuckoo Counter",
+    "pssketch": "PSSketch",
     "tinyr1": "TinyR1-32B"
   },
   "groups": [
@@ -49,29 +50,57 @@
       ]
     },
     {
+      "id": "ai-measurement",
+      "title": "AI-based Measurement",
+      "topics": [
+        {
+          "label": "Neural decoding of flow-size distributions",
+          "papers": [
+            "neufsd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-mining",
+      "title": "Data Mining",
+      "topics": [
+        {
+          "label": "Persistence and sparse flows",
+          "papers": [
+            "filtering",
+            "hypersistent",
+            "pssketch"
+          ]
+        },
+        {
+          "label": "Frequency and heavy hitters",
+          "papers": [
+            "heavylocker",
+            "bitmatcher"
+          ]
+        },
+        {
+          "label": "Quantile estimation",
+          "papers": [
+            "cooled-kll"
+          ]
+        }
+      ]
+    },
+    {
       "id": "network",
       "title": "Network Measurement",
       "topics": [
         {
-          "label": "Learning-based measurement",
+          "label": "Flow dynamics",
           "papers": [
-            "neufsd"
+            "jittersketch"
           ]
         },
         {
-          "label": "Flow dynamics and persistence",
+          "label": "Frequency and top-k estimation",
           "papers": [
-            "filtering",
-            "jittersketch",
-            "hypersistent"
-          ]
-        },
-        {
-          "label": "Frequency, heavy hitters, and quantiles",
-          "papers": [
-            "heavylocker",
-            "cooled-kll",
-            "bitmatcher",
             "cuckoo-counter"
           ]
         }

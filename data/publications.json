@@ -20,7 +20,7 @@
     "url": "https://github.com/NeuFSD/NeuFSD1",
     "description": "Neural decoding estimates flow-size distributions directly from sketch counters.",
     "links": {
-      "Code": "https://github.com/NeuFSD/NeuFSD1"
+      "GitHub": "https://github.com/stallone0000/NeuFSD"
     },
     "classifications": [
       "THU-A"
@@ -29,7 +29,8 @@
     "image": "assets/images/neufsd-structure.png",
     "image_alt": "NeuFSD insertion pipeline and neural decoding architecture",
     "image_width": 2753,
-    "image_height": 964
+    "image_height": 964,
+    "pdf": "assets/papers/2027-sigmetrics-neufsd.pdf"
   },
   {
     "id": "filtering",
@@ -50,8 +51,7 @@
     "url": "https://doi.org/10.1109/TKDE.2026.3695579",
     "description": "A unified filtering and acceleration framework for high-performance persistence estimation.",
     "links": {
-      "Paper": "https://doi.org/10.1109/TKDE.2026.3695579",
-      "PDF": "https://turbonet.team/HypersistentSketch/HypersistentSketch_TKDE2026.pdf"
+      "GitHub": "https://github.com/wenjunpaper/HypersistentSketch"
     },
     "classifications": [
       "CCF-A"
@@ -60,7 +60,8 @@
     "image": "assets/images/filtering-accelerating-fig5.png",
     "image_alt": "Filtering and acceleration framework for persistence estimation",
     "image_width": 1092,
-    "image_height": 420
+    "image_height": 420,
+    "pdf": "assets/papers/2026-tkde-filtering.pdf"
   },
   {
     "id": "jittersketch",
@@ -81,8 +82,7 @@
     "url": "https://doi.org/10.1145/3774904.3792328",
     "description": "A sketch-based approach to detecting jittery flows by filtering infrequent and stable traffic.",
     "links": {
-      "Paper": "https://doi.org/10.1145/3774904.3792328",
-      "PDF": "https://turbonet.team/JitterSketch/JitterSketch_WWW2026.pdf"
+      "GitHub": "https://github.com/wenjunpaper/JitterSketch"
     },
     "classifications": [
       "CCF-A"
@@ -91,7 +91,8 @@
     "image": "assets/images/jittersketch-fig4.png",
     "image_alt": "JitterSketch micro filter, stable cache and jitter detector",
     "image_width": 992,
-    "image_height": 344
+    "image_height": 344,
+    "pdf": "assets/papers/2026-www-jittersketch.pdf"
   },
   {
     "id": "reasoning-skills",
@@ -109,9 +110,8 @@
     "url": "https://aclanthology.org/2026.acl-industry.154/",
     "description": "Retrieve and reuse reasoning skills to reduce redundant reasoning and improve accuracy.",
     "links": {
-      "Paper": "https://aclanthology.org/2026.acl-industry.154/",
-      "PDF": "https://aclanthology.org/2026.acl-industry.154.pdf",
-      "Code": "https://github.com/stallone0000/Reasoning-Skill"
+      "GitHub": "https://github.com/stallone0000/Reasoning-Skill",
+      "Demo": "https://reasoning-skill.onrender.com/"
     },
     "image": "assets/images/thinking-with-reasoning-skills-fig2.png",
     "image_alt": "Overview of reasoning-skill extraction, retrieval and reuse",
@@ -121,7 +121,8 @@
       "CCF-A"
     ],
     "distinction": "Oral",
-    "domain": "ai"
+    "domain": "ai",
+    "pdf": "assets/papers/2026-acl-reasoning-skills.pdf"
   },
   {
     "id": "scf",
@@ -143,9 +144,7 @@
     "distinction": "Accepted",
     "url": "https://arxiv.org/abs/2602.11717",
     "description": "Sparse, distribution-aware updates reduce functional interference during model merging.",
-    "links": {
-      "Paper": "https://arxiv.org/abs/2602.11717"
-    },
+    "links": {},
     "image": "assets/images/beyond-parameter-arithmetic-fig1.png",
     "image_alt": "Repetition rates for model-merging methods reported in the paper",
     "image_width": 723,
@@ -154,7 +153,8 @@
       "CCF-A"
     ],
     "domain": "ai",
-    "selected_override": true
+    "selected_override": true,
+    "pdf": "assets/papers/2026-neurips-scf.pdf"
   },
   {
     "id": "reasoning-data",
@@ -172,10 +172,12 @@
     "url": "https://arxiv.org/abs/2606.02113",
     "description": "A study of reasoning data for post-training large language models.",
     "links": {
-      "Paper": "https://arxiv.org/abs/2606.02113"
+      "GitHub": "https://github.com/RenBing-Sumeru/Awesome-LLM-Reasoning-Data",
+      "Demo": "https://renbing-sumeru.github.io/Awesome-LLM-Reasoning-Data/"
     },
     "classifications": [],
-    "domain": "ai"
+    "domain": "ai",
+    "pdf": "assets/papers/2026-arxiv-reasoning-data.pdf"
   },
   {
     "id": "sciencearena",
@@ -203,9 +205,8 @@
     "url": "https://arxiv.org/abs/2608.30517",
     "description": "Evaluating large language models on recent scientific Olympiad competitions.",
     "links": {
-      "Paper": "https://arxiv.org/abs/2608.30517",
-      "Project": "https://github.com/stallone0000/Science-Arena",
-      "PDF": "https://arxiv.org/pdf/2608.30517"
+      "GitHub": "https://github.com/stallone0000/Science-Arena",
+      "Demo": "https://science-arena.onrender.com/"
     },
     "image": "assets/images/sciencearena-fig1.png",
     "image_alt": "ScienceArena benchmark construction pipeline",
@@ -216,7 +217,33 @@
     ],
     "distinction": "Main Conference",
     "status": "accepted",
-    "domain": "ai"
+    "domain": "ai",
+    "pdf": "assets/papers/2026-emnlp-sciencearena.pdf"
+  },
+  {
+    "id": "heavymatcher",
+    "title": "HeavyMatcher: Finding Top-k Items with Compact Linear Space",
+    "authors": [
+      "Han Wang*",
+      "Sheng Lan*",
+      "Jiayao Wang*",
+      "Qilong Shi",
+      "Wenjun Li",
+      "Laizhong Cui",
+      "Tong Yang",
+      "Shuhui Chen",
+      "Weizhe Zhang"
+    ],
+    "venue": "ICNP",
+    "year": 2026,
+    "url": "https://turbonet.team/HeavyMatcher/",
+    "description": "Entry merging, evolution and cuckoo hashing enable accurate top-k detection in compact linear space.",
+    "links": {
+      "GitHub": "https://github.com/wenjunpaper/HeavyMatcher"
+    },
+    "classifications": [],
+    "domain": "network",
+    "pdf": "assets/papers/2026-icnp-heavymatcher.pdf"
   },
   {
     "id": "tinyr1",
@@ -249,11 +276,11 @@
     "url": "https://arxiv.org/abs/2503.04872",
     "description": "Branch-Merge distillation combines domain-specific expert knowledge in a general reasoning model.",
     "links": {
-      "Paper": "https://arxiv.org/abs/2503.04872",
       "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
     },
     "classifications": [],
-    "domain": "ai"
+    "domain": "ai",
+    "pdf": "assets/papers/2025-arxiv-tinyr1.pdf"
   },
   {
     "id": "heavylocker",
@@ -271,9 +298,7 @@
     "url": "https://doi.org/10.1145/3690624.3709167",
     "description": "A latching mechanism for accurate heavy-hitter detection in local and distributed data streams.",
     "links": {
-      "Paper": "https://doi.org/10.1145/3690624.3709167",
-      "PDF": "https://yangtonghome.github.io/uploads/3690624.3709167_SIGKDD2025.pdf",
-      "Code": "https://github.com/HeavyLocker/HeavyLockerSketch"
+      "GitHub": "https://github.com/HeavyLocker/HeavyLockerSketch"
     },
     "image": "assets/images/heavylocker-fig3.png",
     "image_alt": "HeavyLocker buckets and lock-bit structure",
@@ -282,7 +307,8 @@
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2025-kdd-heavylocker.pdf"
   },
   {
     "id": "cooled-kll",
@@ -302,9 +328,7 @@
     "year": 2025,
     "url": "https://doi.org/10.1145/3711896.3736894",
     "description": "Filtering hot items improves the accuracy and memory efficiency of KLL quantile estimation.",
-    "links": {
-      "Paper": "https://doi.org/10.1145/3711896.3736894"
-    },
+    "links": {},
     "classifications": [
       "CCF-A"
     ],
@@ -312,7 +336,8 @@
     "image": "assets/images/cooled-kll-fig3.png",
     "image_alt": "Cooled-KLL hot-item filter and quantile sketch",
     "image_width": 1000,
-    "image_height": 384
+    "image_height": 384,
+    "pdf": "assets/papers/2025-kdd-cooled-kll.pdf"
   },
   {
     "id": "hypersistent",
@@ -332,9 +357,7 @@
     "url": "https://doi.org/10.1109/ICDE65448.2025.00227",
     "description": "Fast item separation improves the accuracy and throughput of persistence estimation.",
     "links": {
-      "Paper": "https://doi.org/10.1109/ICDE65448.2025.00227",
-      "PDF": "https://wenjunli.com/HypersistentSketch/HypersistentSketch_ICDE2025_CR.pdf",
-      "Code": "https://github.com/wenjunpaper/HypersistentSketch"
+      "GitHub": "https://github.com/wenjunpaper/HypersistentSketch"
     },
     "image": "assets/images/hypersistent-sketch-fig5.png",
     "image_alt": "Hypersistent Sketch burst filter, cold filter and hot-part pipeline",
@@ -343,7 +366,8 @@
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2025-icde-hypersistent.pdf"
   },
   {
     "id": "pssketch",
@@ -363,12 +387,13 @@
     "url": "https://doi.org/10.1145/3711896.3737094",
     "description": "A layered sketch for finding persistent, sparse flows in network streams.",
     "links": {
-      "Paper": "https://doi.org/10.1145/3711896.3737094"
+      "GitHub": "https://github.com/wenjunpaper/PSSketch"
     },
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2025-kdd-pssketch.pdf"
   },
   {
     "id": "heavyfinder",
@@ -386,11 +411,10 @@
     "year": 2025,
     "url": "https://doi.org/10.1109/IWQoS65803.2025.11143517",
     "description": "Fine-grained heavy-hitter detection using instantaneous flow rates.",
-    "links": {
-      "Paper": "https://doi.org/10.1109/IWQoS65803.2025.11143517"
-    },
+    "links": {},
     "classifications": [],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2025-iwqos-heavyfinder.pdf"
   },
   {
     "id": "voice-control",
@@ -408,11 +432,10 @@
     "year": 2025,
     "url": "https://doi.org/10.1109/BigData66926.2025.11400898",
     "description": "Distilling a large audio transformer into a compact model for edge-based voice control.",
-    "links": {
-      "Paper": "https://doi.org/10.1109/BigData66926.2025.11400898"
-    },
+    "links": {},
     "classifications": [],
-    "domain": "ai"
+    "domain": "ai",
+    "pdf": "assets/papers/2025-bigdata-voice-control.pdf"
   },
   {
     "id": "bitmatcher",
@@ -434,9 +457,7 @@
     "url": "https://doi.org/10.1109/ICDE60146.2024.00366",
     "description": "Bit-level counter adjustment makes sketches more memory-efficient while preserving fast updates.",
     "links": {
-      "Paper": "https://doi.org/10.1109/ICDE60146.2024.00366",
-      "PDF": "https://wenjunli.com/BitMatcher/BitMatcher_ICDE2024_CR.pdf",
-      "Code": "https://github.com/wenjunpaper/BitMatcher"
+      "GitHub": "https://github.com/wenjunpaper/BitMatcher"
     },
     "image": "assets/images/bitmatcher-fig6.png",
     "image_alt": "BitMatcher data structure and adaptive counter states",
@@ -445,7 +466,8 @@
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2024-icde-bitmatcher.pdf"
   },
   {
     "id": "bubble-sketch",
@@ -468,10 +490,11 @@
     "url": "https://doi.org/10.1145/3627673.3679882",
     "description": "Memory-efficient top-k detection in data streams using threshold relocation.",
     "links": {
-      "Paper": "https://doi.org/10.1145/3627673.3679882"
+      "GitHub": "https://github.com/wenjunpaper/BubbleSketch"
     },
     "classifications": [],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2024-cikm-bubble-sketch.pdf"
   },
   {
     "id": "cuckoo-counter",
@@ -490,9 +513,7 @@
     "url": "https://doi.org/10.1109/TNET.2022.3232098",
     "description": "Adaptive counters based on cuckoo hashing support accurate frequency and top-k estimation.",
     "links": {
-      "Paper": "https://doi.org/10.1109/TNET.2022.3232098",
-      "PDF": "https://www.wenjunli.com/CuckooCounter/CC_TON.pdf",
-      "Code": "https://github.com/wenjunpaper/CuckooCounter"
+      "GitHub": "https://github.com/wenjunpaper/CuckooCounter"
     },
     "image": "assets/images/cuckoo-counter-fig2.png",
     "image_alt": "Cuckoo Counter arrays, buckets and entries",
@@ -501,7 +522,8 @@
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2023-ton-cuckoo-counter.pdf"
   },
   {
     "id": "sketchint",
@@ -521,12 +543,13 @@
     "url": "https://doi.org/10.1109/TPDS.2023.3303924",
     "description": "Combining sketches with in-band telemetry enables fine-grained network measurement.",
     "links": {
-      "Paper": "https://doi.org/10.1109/TPDS.2023.3303924"
+      "GitHub": "https://github.com/SketchINT-code/SketchINT"
     },
     "classifications": [
       "CCF-A"
     ],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2023-tpds-sketchint.pdf"
   },
   {
     "id": "she",
@@ -548,9 +571,10 @@
     "url": "https://doi.org/10.1145/3545008.3545009",
     "description": "A generic framework for extending data-stream mining to sliding windows.",
     "links": {
-      "Paper": "https://doi.org/10.1145/3545008.3545009"
+      "GitHub": "https://github.com/Sliding-Hardware-Estimator/SlidingHardwareEstimator"
     },
     "classifications": [],
-    "domain": "network"
+    "domain": "network",
+    "pdf": "assets/papers/2022-icpp-she.pdf"
   }
 ]

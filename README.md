@@ -2,64 +2,47 @@
 
 Live website: **https://stallone0000.github.io/**
 
-English academic homepage, full publications page and printable CV. The current design follows [Yinda Zhang's homepage](https://yindazhang.github.io/): a fixed dark navigation bar, Arial typography, a wide white page, restrained blue links and research-topic publication lists. The HTML/CSS is independently implemented; it does not copy personal content or load Bootstrap/jQuery.
+The site has a concise homepage and a single [Full CV](https://stallone0000.github.io/cv.html) with education, teaching, honors, academic service, and publications. The design follows [Yinda Zhang's homepage](https://yindazhang.github.io/): fixed dark navigation, Arial typography, a white page and restrained blue links. HTML/CSS is independently implemented without Bootstrap or jQuery.
 
-**改版前完整备份：[2026-09-30 旧版](https://github.com/stallone0000/stallone0000.github.io/releases/tag/ben-style-2026-09-30)。快速恢复方法见 [docs/RESTORE.md](docs/RESTORE.md)。**
+## 编辑与生成
 
-## 编辑内容
-
-- `data/profile.json`：简介、联系方式、教育、教学、奖项、服务和精选项目。
-- `data/publications.json`：完整论文列表、作者顺序、共同一作、正式链接和缩略图。
-- `data/presentation.json`：新风格首页的研究主题短句和论文简称。
-- `assets/images/`：经过压缩的本人照片与本人论文图；图源全部保留，当前文字风格首页不加载论文图。
-- `templates/base.html`、`assets/style.css`：公共页面结构和样式。
-- `scripts/build.py`：仅依赖 Python 3 标准库，生成可直接发布的 HTML。
-
-更新数据后运行：
+- `data/profile.json`：本人选择公开的简介、教育、教学、荣誉、服务与 Highlights。
+- `data/publications.json`：论文题名、作者顺序、共同一作标记、venue、来源记录、站内 `pdf` 路径与补充资源。
+- `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。
+- `assets/papers/`：可直接打开的论文 PDF，命名为 `年份-venue-论文ID.pdf`。
+- `docs/papers.json`：每份 PDF 的来源、页数、字节数与 SHA256；作者提供文件不记录私人本地路径。
+- `templates/base.html`、`assets/style.css`、`scripts/build.py`：模板、样式与 Python 标准库生成器。
 
 ```sh
 python3 scripts/build.py
 python3 -m http.server 8765
 ```
 
-打开 http://localhost:8765 。将修改后的数据与生成的页面一起 commit / push 到 `main`，GitHub Pages 自动发布仓库根目录。无需 Node.js、API 密钥、数据库或运行时服务。
+生成 `index.html`、`cv.html`、`404.html`，以及旧 `publications.html` 的兼容跳转页。将源文件、PDF 与生成页面一起提交并推送到 `main`，GitHub Pages 发布仓库根目录。无需 Node.js、数据库或运行时服务。
 
-## 更换模板
+## 页面与链接规则
 
-私人备选档案库：**https://github.com/stallone0000/academic-website-templates**
+- 导航只有 Home 和 Full CV；旧 Publications 地址会保留查询参数和论文锚点，跳转至同一份完整简历。
+- 首页每个论文链接进入 Full CV 的对应论文位置；Full CV 的蓝色论文题名直接打开站内 PDF。没有 PDF 的题名保持普通文字，不链接到其他文章或错误版本。
+- 首页按研究领域与 venue 分为 LLMs、AI-based Measurement（SIGMETRICS）、Data Mining（ICDE、KDD、TKDE）、Network Measurement（ToN、WWW）；Data Mining 同时展示 PSSketch。首页是手动维护的研究主题概览，Full CV 的 Selected／More 则保留作者身份筛选规则。
+- 论文下方只显示可用的 `[GitHub]`、`[Demo]`、`[Model]` 等补充资源，不再显示 `[Paper]`、`[PDF]`。
+- Full CV 保留 `Publications & Preprints`、Highlights、Selected Publications、More Publications。Selected 分为 LLMs 与 Network Measurement，每组按年份倒序；其余论文在 More 中按年份倒序。
+- 一作／共同一作且 `classifications` 含 CCF-A 或 THU-A 的论文自动精选；SCF 按本人明确要求以 `selected_override` 纳入，当前 11 Selected / 9 More。该例外不改变作者身份。
+- `*` 表示 equal contribution，署名第一也保留星号。TKDE 2026 前两位、NeuFSD 前三位为共一；本人姓名加粗并加下划线。
+- venue 格式统一为 `ACL'26`、`TKDE'26`、`SIGMETRICS'27`；Oral、Main Conference、Accepted 保留在数据中，不在列表显示。
 
-其中保存 Keunhong Park、Yuki Asano、Matthew Tancik、Ben Mildenhall、Saining Xie、Maithra Raghu 和 Tianxing Chen 的参考快照、来源与许可说明。Tianxing 是未来经历更丰富时的优先备选。
+## 内容依据
 
-更换时保留 `data/`、本人照片和论文素材，按目标布局改造模板层，再生成网站。各参考站框架不同，档案不是一键主题切换器；没有明确复用许可的源码仅作私有参考，独立实现对应布局。开始换版前先为当前版本打 tag，便于恢复。
+论文元数据依据本人确认及原论文；正式论文、录用状态和预印本分别记录。SCF 的新作者顺序由本人确认，并与作者提供的最新版相符；NeuFSD 的 SIGMETRICS 2027 录用信息由本人确认。新上传的两份原稿保持字节不变，仅统一文件名。
 
-## 数据口径
+Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，其他已确认奖项保留在源数据中。研究合作、模型链接与论文署名按原记录保留。网站只维护本人选择公开的资料，不上传私人简历文件。
 
-教育、服务和已列论文依据个人简历、本人确认及公开论文记录。网站仅维护本人选择公开的资料；研究合作与论文署名按原记录保留。
+照片来自本人指定的 `IMG_5491.JPG`，显示在 Full CV，CSS 在固定画框内按 125% 放大人物。中文姓名保持括号、常规字重与较小字号。
 
-- 论文链接指向 DOI、ACL Anthology 或 arXiv 原记录。
-- `*` 标注 equal contribution，署名第一的共同一作也保留星号；本人姓名加粗并加下划线。TKDE 2026 前两位和 NeuFSD 前三位为共一，依据本人确认；其余既有共一标记保持。
-- Selected Publications 根据一作／共同一作身份及 `classifications` 中的 CCF-A 或 THU-A 自动生成并统计篇数，包含已发表及已录用论文；分为 Network Measurement 与 LLMs，每类按年份倒序。完整论文页仍按此规则分为 10 篇 Selected 和 9 篇 More。首页是独立的主题精选：原 10 篇加本人指定的 SCF（NeurIPS 2026）和 Edge-Optimized Voice Control（BigData 2025），共 12 篇，分为 LLMs 与 Network Measurement；Network Measurement 聚合为 Learning-based measurement、Flow dynamics and persistence、Frequency, heavy hitters, and quantiles 三条，每条内部按年份倒序。Highlights 在 Publications 页保留。More Publications 和 CV 均按年份倒序。
-- 论文 venue 显示统一为简称加两位年份，如 `SIGMETRICS'27`、`NeurIPS'26`、`TKDE'26`、`ToN'23`。首页、Highlights、完整论文列表和网页 CV 共用格式；Oral、Main Conference、Accepted 保留在源数据中，但不在页面显示。
-- 预印本的 venue 简写为 arXiv。ScienceArena 数据记录为 EMNLP 2026 Main Conference，前三位作者共一，依据本人确认与 arXiv 页面／论文脚注。TRS 数据记录为 ACL 2026 (Oral)，保留原始 Anthology 链接。
-- Beyond Parameter Arithmetic 的 NeurIPS 2026 录用由本人于2026-09-25确认，数据记录为 NeurIPS 2026 Accepted，页面显示为 `NeurIPS'26`；保留 arXiv 论文链接。根据现有作者顺序，本人非一作/共一，仍列入 More Publications。
-- NeuFSD 的最终九人作者名单及 ACM SIGMETRICS 2027 录用信息由本人提供的 Scholar 条目确认，按 THU-A 归入 Selected；未添加尚无可靠链接的 DOI 或公开 PDF。
-- 奖项仅列可确认名称，未使用存在口径差异的排名描述。
-- 2026 年清华大学国家奖学金及全校 Top 1% 由本人于 2026-10-06 确认，列在网页 CV 的 Selected Honors 首位。
-- 本人确认入选2026年IETF菁才计划，按“Selected Participant”列入荣誉。个人验收报告明确身份为“IETF 125 New Participants 资助计划参与者”，报名材料明确时间为2026年3月，故附注 New Participants。项目全称与资助性质见[中国互联网协会官方通知](https://www.isc.org.cn/article/27269689823457280.html)，本人姓名与清华单位可见[IETF 125官方参会记录](https://datatracker.ietf.org/doc/bluesheets-125-newparticipant-202603150130/00/)。Elite Talent Program 为英文表述，保留菁才计划中文名以便对应；未公开原始个人材料。
-- BitMatcher获2024年广东省计算机学会优秀论文一等奖，本人已确认；荣誉列表和论文备注均有标注。组织英文名采用[学会官网](https://www.gdcomf.com/gyxh/xhjj)的 Computer Academy of Guangdong，论文奖另有[共同作者公开资料](https://www.wenjunli.com/newstudent/ForNewStudent.pdf)支持。
-- `cv.html` 是根据当前数据生成的公开版 CV；不上传原始私人简历文件。
-- 照片使用本人指定的 `IMG_5491.JPG`，进行尺寸/编码优化并移除元数据；当前放在 CV 页，CSS 在固定画框内按 125% 放大人物。
-- 新版桌面 Arial 简介、联系方式、论文列表与论文附注统一 17.85px，分节标题 24px，姓名 30px；容器 750/970/1170px，导航高 50px，对应 Yinda 参考页。中文姓名保留括号、常规字重并缩为 22px。移动端正文保留 16px 以方便阅读。
-- 主页仅含简介、联系方式和主题精选论文，底部以分隔线结束；教育、教学、荣誉、审稿服务保留在 CV，审稿只公开 venue、年份及角色。
+## 备份与恢复
 
-素材来源见 [docs/ASSETS.md](docs/ASSETS.md)。网站没有第三方统计脚本、Cookie 横幅或外部字体请求。当前使用系统 Arial/Helvetica 字体；旧版 Lato 字体与许可仍保留在 `assets/fonts/`。
+- 私有备选档案库：**https://github.com/stallone0000/academic-website-templates**，保存七种参考风格；Tianxing Chen 为未来内容更丰富时的优先备选。
+- 改版前的完整备份：[2026-09-30 旧版](https://github.com/stallone0000/stallone0000.github.io/releases/tag/ben-style-2026-09-30)。恢复说明见 [docs/RESTORE.md](docs/RESTORE.md)。
+- 恢复旧风格时须保留现行公开资料范围和最新论文数据，避免用过时履历覆盖当前版本。
 
-标签页小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可，图形未经修改。
-
-## 2026-10-16 内容更新
-
-- 本人确认 SCF 的新作者顺序：Weihong Lin、Qilong Shi，其余作者保持相对顺序，Lin Sun 移至末位。arXiv 当前旧版本尚未更新署名；网站按本人提供的最终顺序维护，不添加共同一作标记。
-- SCF 通过 `selected_override` 按本人明确要求纳入 Selected，形成 11 Selected / 8 More；该例外不改变其他论文的筛选规则。Selected 的总数说明不再将全部论文称为一作／共一。
-- 网页 Resume 仅显示国奖、Siebel、华为奖学金，其余荣誉保留在源数据，通过 `show_in_cv` 控制。华为奖学金附注按本人“硕士院系 top 1”表述为院系硕士类别第 1 名。
-- 首页 TinyR1-32B 替换边缘语音控制条目，关联现有 TinyR1-32B-Preview 论文，并附本人指定的 [Hugging Face 模型](https://huggingface.co/qihoo360/TinyR1-32B)入口；完整论文页和网页 CV 也附模型入口。不新增重复论文条目。
-- 移除 TinyR1 的版本更新时间备注。
+素材与论文图来源见 [docs/ASSETS.md](docs/ASSETS.md)。当前使用系统 Arial/Helvetica，旧 Lato 字体及许可保留在 `assets/fonts/`。小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。无第三方统计脚本或外部字体请求。

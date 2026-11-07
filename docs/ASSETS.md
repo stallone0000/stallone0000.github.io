@@ -27,4 +27,11 @@ Figures were extracted on 2026-09-24. Original figure content is unchanged; capt
 
 These are original paper figures rendered from PDF, with surrounding captions removed; diagram content is unchanged.
 
-- `assets/images/neufsd-structure.png`: original architecture figure supplied in the author's NeuFSD source, rendered from its vector PDF with surrounding whitespace removed. Diagram content is unchanged. [NeuFSD code](https://github.com/NeuFSD/NeuFSD1).
+- `assets/images/neufsd-structure.png`: original architecture figure supplied in the author's NeuFSD source, rendered from its vector PDF with surrounding whitespace removed. Diagram content is unchanged. [NeuFSD code](https://github.com/stallone0000/NeuFSD).
+
+
+## Hosted papers (2026-11-07)
+
+Paper PDFs are served directly from `assets/papers/` using `year-venue-paper-id.pdf` names. The exact source and SHA256 for every file are listed in [papers.json](papers.json). Two camera-ready/publication copies were supplied directly by the author; their bytes are unchanged. Other files come from official publication records, arXiv, coauthor-hosted paper pages, or author-supplied publication copies. Local private source paths are not published.
+
+Full CV paper titles link to these PDF files. Supplemental GitHub, Demo and Model links are stored separately in the publication data. The homepage links to each paper's Full CV anchor. The original Publications route redirects to Full CV while retaining paper anchors.

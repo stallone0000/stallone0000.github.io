@@ -1,0 +1,2 @@
+# Preserve original PDF bytes and avoid treating compressed PDF streams as text.
+*.pdf binary

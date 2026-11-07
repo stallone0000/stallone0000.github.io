@@ -1,0 +1,163 @@
+[
+  {
+    "id": "neufsd",
+    "file": "assets/papers/2027-sigmetrics-neufsd.pdf",
+    "source": "Author-provided ACM publication PDF",
+    "sha256": "6e7b87f3f8f25eeacf531cce8ac2a7208531121d6278e53ed656207b831b87a3",
+    "bytes": 2722340,
+    "pages": 46
+  },
+  {
+    "id": "filtering",
+    "file": "assets/papers/2026-tkde-filtering.pdf",
+    "source": "https://yangtonghome.github.io/uploads/FilteringandAccelerating_TKDE2026.pdf",
+    "sha256": "8c67e61600daaeeab71c800eb70efe363ca3cb0c03eb490f2b7333f3235e00fe",
+    "bytes": 4434989,
+    "pages": 18
+  },
+  {
+    "id": "jittersketch",
+    "file": "assets/papers/2026-www-jittersketch.pdf",
+    "source": "https://yangtonghome.github.io/uploads/JitterSketch_WWW26.pdf",
+    "sha256": "6ade9e5f09c2018cc22ea1da9f469a1b65d89456123d22e1c7052db01087c0bf",
+    "bytes": 1451033,
+    "pages": 12
+  },
+  {
+    "id": "reasoning-skills",
+    "file": "assets/papers/2026-acl-reasoning-skills.pdf",
+    "source": "https://aclanthology.org/2026.acl-industry.154.pdf",
+    "sha256": "3e4bb38a262f94e93836c69dcc14132f3b446af0b1bcca1e7c53ca4a83ebe998",
+    "bytes": 1300099,
+    "pages": 14
+  },
+  {
+    "id": "scf",
+    "file": "assets/papers/2026-neurips-scf.pdf",
+    "source": "Author-provided camera-ready PDF (2026-11-06)",
+    "sha256": "b91ab6f87225db7bf7eebd93c41e5aae20bc0c4cdb89052da55125eb1b6ca051",
+    "bytes": 2065954,
+    "pages": 33
+  },
+  {
+    "id": "reasoning-data",
+    "file": "assets/papers/2026-arxiv-reasoning-data.pdf",
+    "source": "https://arxiv.org/pdf/2606.02113",
+    "sha256": "8d8bbf7578a4ec0dc9f5dbec1dd8a6e2bed4b15eb35547bc6ad8bab3f5de1882",
+    "bytes": 16223565,
+    "pages": 22
+  },
+  {
+    "id": "sciencearena",
+    "file": "assets/papers/2026-emnlp-sciencearena.pdf",
+    "source": "https://arxiv.org/pdf/2608.30517",
+    "sha256": "0da1e9a5e71b1ce5866778df51e6bab42da05576b725c433cf111255ae7f22cd",
+    "bytes": 1638752,
+    "pages": 18
+  },
+  {
+    "id": "tinyr1",
+    "file": "assets/papers/2025-arxiv-tinyr1.pdf",
+    "source": "https://arxiv.org/pdf/2503.04872",
+    "sha256": "50291025cf24c699c3a10275813efce636822e0d3de266eec042c3264c8d97ef",
+    "bytes": 578729,
+    "pages": 10
+  },
+  {
+    "id": "heavylocker",
+    "file": "assets/papers/2025-kdd-heavylocker.pdf",
+    "source": "https://yangtonghome.github.io/uploads/3690624.3709167_SIGKDD2025.pdf",
+    "sha256": "1e9a200e84d72dfd6990883517bd677c91a66be4bb57b14826417cea9f571198",
+    "bytes": 4416419,
+    "pages": 12
+  },
+  {
+    "id": "hypersistent",
+    "file": "assets/papers/2025-icde-hypersistent.pdf",
+    "source": "https://wenjunli.com/HypersistentSketch/HypersistentSketch_ICDE2025_CR.pdf",
+    "sha256": "0e6573f870c301c4d4d64229185ba94ec0476272f740a89a1bcbb4fac1b17d58",
+    "bytes": 1239893,
+    "pages": 13
+  },
+  {
+    "id": "voice-control",
+    "file": "assets/papers/2025-bigdata-voice-control.pdf",
+    "source": "Author-provided IEEE BigData publication PDF",
+    "sha256": "c4a700871d289624b57987b3fb38b2c1f280a90691cdc50e7951ff6af9e62c5d",
+    "bytes": 485492,
+    "pages": 8
+  },
+  {
+    "id": "bitmatcher",
+    "file": "assets/papers/2024-icde-bitmatcher.pdf",
+    "source": "https://yangtonghome.github.io/uploads/BitMatcher_ICDE24.pdf",
+    "sha256": "7a0d74e0328accc94e47220d783e1c0feaa41138bcd868954eabcaa12cc51872",
+    "bytes": 2568137,
+    "pages": 13
+  },
+  {
+    "id": "cuckoo-counter",
+    "file": "assets/papers/2023-ton-cuckoo-counter.pdf",
+    "source": "https://yangtonghome.github.io/uploads/CuckooCounter_ton.pdf",
+    "sha256": "1bada2e93d2fcf51f88b65c3cdc11b5026daf9d8c1df33254145d304779cb7ae",
+    "bytes": 3659204,
+    "pages": 16
+  },
+  {
+    "id": "pssketch",
+    "file": "assets/papers/2025-kdd-pssketch.pdf",
+    "source": "https://turbonet.team/PSSketch/PSSketch_SIGKDD2025.pdf",
+    "sha256": "594b998739b0da2e11c2df555b7ca77f8faf5e690f417ac74582072bd2074adc",
+    "bytes": 3487345,
+    "pages": 12
+  },
+  {
+    "id": "bubble-sketch",
+    "file": "assets/papers/2024-cikm-bubble-sketch.pdf",
+    "source": "https://yangtonghome.github.io/uploads/BubbleSketch.pdf",
+    "sha256": "84ccb4ed7f0c7f64de16481d9999d8bfdfbd413e96aa5721638f4f3b1cb3737f",
+    "bytes": 1189579,
+    "pages": 5
+  },
+  {
+    "id": "sketchint",
+    "file": "assets/papers/2023-tpds-sketchint.pdf",
+    "source": "https://yangtonghome.github.io/uploads/SketchINT_TPDS23.pdf",
+    "sha256": "493c3c4de68599089d13f483ec01a20204661cd4cda769da0393a4268e37b4b6",
+    "bytes": 2432607,
+    "pages": 19
+  },
+  {
+    "id": "she",
+    "file": "assets/papers/2022-icpp-she.pdf",
+    "source": "https://yangtonghome.github.io/uploads/icpp22.pdf",
+    "sha256": "dbe3b4c13a180ae61325dccd203e53ab3835cee800b5f5b02d28b096477bb09c",
+    "bytes": 1496116,
+    "pages": 12
+  },
+  {
+    "id": "cooled-kll",
+    "file": "assets/papers/2025-kdd-cooled-kll.pdf",
+    "source": "https://dl.acm.org/doi/pdf/10.1145/3711896.3736894",
+    "sha256": "38b14e8a33a6a98934081e1c48e90eeec762eb9d0b3e46eba58e8d2d9a16a929",
+    "bytes": 1720049,
+    "pages": 12
+  },
+  {
+    "id": "heavyfinder",
+    "file": "assets/papers/2025-iwqos-heavyfinder.pdf",
+    "source": "Author-provided IEEE IWQoS 2025 publication PDF",
+    "publication_url": "https://doi.org/10.1109/IWQoS65803.2025.11143517",
+    "sha256": "d2942c7f6277ff1b260338f94259ea8107b0798d5e3f92804e0941fc2d0cf237",
+    "bytes": 3006340,
+    "pages": 10
+  },
+  {
+    "id": "heavymatcher",
+    "file": "assets/papers/2026-icnp-heavymatcher.pdf",
+    "source": "https://turbonet.team/HeavyMatcher/HeavyMatcher_ICNP2026.pdf",
+    "sha256": "bfe382674d26f0fadd9404d12ac9f2d711b9c8a48a301d92ef1ac55bedb16a63",
+    "bytes": 2698416,
+    "pages": 11
+  }
+]

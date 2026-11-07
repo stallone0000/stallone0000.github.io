@@ -36,12 +36,20 @@ def venue_label(paper):
 
 
 def publication(paper):
-    links = ''.join(f'<a href="{e(url, quote=True)}">[{e(label)}]</a>' for label, url in paper['links'].items())
+    pdf = paper.get('pdf')
+    if pdf:
+        if not (ROOT / pdf).is_file():
+            raise FileNotFoundError(f'Missing PDF for {paper["id"]}: {pdf}')
+        title = f'<a href="{e(pdf, quote=True)}">{e(paper["title"])}</a>'
+    else:
+        title = e(paper['title'])
+    links = ''.join(f'<a href="{e(url, quote=True)}">[{e(label)}]</a>' for label, url in paper['links'].items() if label not in ('Paper', 'PDF'))
+    resources = f'<div class="paper-links">{links}</div>' if links else ''
     note = f'<p class="paper-note">{e(paper["note"])}</p>' if paper.get('note') else ''
     return f'''<article class="compact-publication" id="{paper['id']}">
-      <h4><strong>[{e(venue_label(paper))}]</strong> <a href="{e(paper['url'], quote=True)}">{e(paper['title'])}</a></h4>
+      <h4><strong>[{e(venue_label(paper))}]</strong> {title}</h4>
       <p class="paper-authors">{authors(paper)}</p>
-      <div class="paper-links">{links}</div>{note}
+{resources}{note}
     </article>'''
 
 
@@ -73,7 +81,7 @@ def render(file, title, content, page_class=''):
         content=content, page_class=page_class,
         footer='' if file == 'index.html' else '<footer><p>© 2026 Qilong Shi · Updated November 2026</p><p>Style inspired by <a href="https://yindazhang.github.io/">Yinda Zhang</a> · <a href="https://github.com/stallone0000/stallone0000.github.io">Source</a></p></footer>',
         home_current=' aria-current="page"' if file == 'index.html' else '',
-        publications_current=' aria-current="page"' if file == 'publications.html' else '')
+        cv_current=' aria-current="page"' if file == 'cv.html' else '')
     (ROOT / file).write_text(page)
 
 
@@ -81,7 +89,7 @@ def render(file, title, content, page_class=''):
 intro = f'''<header class="intro"><h1>{name}</h1>
   <div class="intro-copy"><p>{e(' '.join(profile['bio']))}</p></div>
   <p class="contact-links">Email: <a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a><br>
-    <span class="profile-links">[<a href="cv.html">Resume</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
+    <span class="profile-links">[<a href="cv.html">Full CV</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
   </p></header><hr>'''
 selected = ''
 for group in presentation['groups']:
@@ -91,7 +99,7 @@ for group in presentation['groups']:
         for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
             short_name = presentation['short_names'][paper['id']]
             label = short_name if paper['id'] in presentation.get('hide_venue', []) else f'{short_name}, {venue_label(paper)}'
-            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="publications.html#{paper["id"]}">{e(label)}</a>]</span>')
+            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="cv.html#{paper["id"]}">{e(label)}</a>]</span>')
         links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
         items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
@@ -105,12 +113,11 @@ for highlight in profile['highlights']:
 full_selected = ''
 for domain, title in groups:
     full_selected += f'<section class="publication-group"><h3>{title}</h3>' + ''.join(publication(p) for p in selected_papers if p['domain'] == domain) + '</section>'
-publications = f'''<header class="publications-header"><h1>Publications</h1>
-<p class="section-note">* Equal contribution. <a href="{e(profile['scholar'])}">Google Scholar</a></p></header>
-<section id="highlights"><h2>Highlights</h2><ul class="highlights-list">{''.join(highlights)}</ul></section><hr>
+publication_sections = f'''<section id="publications"><h2>Publications &amp; Preprints</h2>
+<p class="section-note">* Equal contribution.</p>
+<section id="highlights"><h3>Highlights</h3><ul class="highlights-list">{''.join(highlights)}</ul></section>
 <section id="selected-publications"><h2>Selected Publications</h2><p class="section-note">{count_note}</p>{full_selected}</section>
-<hr><section id="more-publications"><h2>More Publications</h2>{''.join(publication(p) for p in other_papers)}</section>'''
-render('publications.html', 'Publications · Qilong Shi', publications, 'publications-page')
+<hr><section id="more-publications"><h2>More Publications</h2>{''.join(publication(p) for p in other_papers)}</section></section>'''
 
 cv = f'''<header class="cv-header">
 <a class="portrait-link" href="assets/images/qilong-shi.jpg" aria-label="View photo of Qilong Shi"><img class="portrait" src="assets/images/qilong-shi.jpg" alt="Qilong Shi in graduation robes at a library" width="180" height="220"></a>
@@ -119,10 +126,17 @@ cv = f'''<header class="cv-header">
 <p>[<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</p>
 <nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav></header><hr>
 <section><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''
-cv += background(for_cv=True) + '<hr><section><h2>Publications &amp; Preprints</h2><p class="section-note">* Equal contribution.</p>' + ''.join(publication(p) for p in papers) + '</section>'
-render('cv.html', 'CV · Qilong Shi', cv, 'cv')
+cv += background(for_cv=True) + '<hr>' + publication_sections
+render('cv.html', 'Full CV · Qilong Shi', cv, 'cv publications-page')
+# Preserve old publication deep links without keeping a duplicate content page.
+(ROOT / 'publications.html').write_text('''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full CV · Qilong Shi</title><link rel="canonical" href="https://stallone0000.github.io/cv.html">
+<meta name="robots" content="noindex"><script src="assets/publications-redirect.js"></script>
+<noscript><meta http-equiv="refresh" content="0; url=cv.html"></noscript></head>
+<body><p><a href="cv.html">Continue to the full CV</a>.</p></body></html>''')
 render('404.html', 'Page not found · Qilong Shi', '<h1>Page not found</h1><p>This page may have moved. <a href="/">Return to the homepage</a>.</p>')
 (ROOT / '.nojekyll').touch()
 (ROOT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + profile['site_url'] + 'sitemap.xml\n')
-(ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{profile["site_url"]}{page}</loc><lastmod>{profile["updated"]}</lastmod></url>' for page in ['', 'publications.html', 'cv.html']) + '</urlset>\n')
-print(f'Built homepage, publications, CV and 404 page: {len(selected_papers)} selected + {len(other_papers)} more publications.')
+(ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{profile["site_url"]}{page}</loc><lastmod>{profile["updated"]}</lastmod></url>' for page in ['', 'cv.html']) + '</urlset>\n')
+print(f'Built homepage, Full CV, legacy redirect and 404 page: {len(selected_papers)} selected + {len(other_papers)} more publications.')
