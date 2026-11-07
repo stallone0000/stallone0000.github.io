@@ -8,7 +8,7 @@ The site has a concise homepage and a single [Full CV](https://stallone0000.gith
 
 - `data/profile.json`：本人选择公开的简介、教育、教学、荣誉与服务；`bio_links` 配置简介中的导师及合作老师主页链接，荣誉条目的可选 `url` 与 `note` 配置公告链接和简短备注。
 - `data/publications.json`：论文题名、作者顺序、共同一作标记、venue、来源记录、站内 `pdf` 路径与补充资源。
-- `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。
+- `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。单个主题可用 `citation_overrides` 定制显示名称与首页锚点。
 - `data/visitors.json`：RevolverMaps2 地球开关、本站公开 site key、尺寸、主题与标记颜色。
 - `assets/papers/`：可直接打开的论文 PDF，命名为 `年份-venue-论文ID.pdf`。
 - `docs/papers.json`：每份 PDF 的来源、页数、字节数与 SHA256；作者提供文件不记录私人本地路径。
@@ -27,10 +27,12 @@ python3 -m http.server 8765
 - 首页每个论文链接进入 Full CV 的对应论文位置；Full CV 的蓝色论文题名直接打开站内 PDF。没有 PDF 的题名保持普通文字，不链接到其他文章或错误版本。
 - 首页按研究领域与 venue 分为 LLMs、AI-based Measurement（SIGMETRICS）、Data Mining（ICDE、KDD、TKDE）、Network Measurement（ToN、WWW）；Data Mining 同时展示 PSSketch。首页是手动维护的研究主题概览，Full CV 的 Selected／More 则保留作者身份筛选规则。
 - 论文下方只显示可用的 `[Code]`、`[Demo]`、`[Model]` 等补充资源，不再显示 `[Paper]`、`[PDF]`。
-- Full CV 的 `Publications & Preprints` 下直接展示 Selected Publications、More Publications。Selected 分为 LLMs 与 Network Measurement，每组按年份倒序；其余论文在 More 中按年份倒序。
+- TinyR1-32B-Preview 论文链接 Preview 模型；SCF（NeurIPS 2026）链接 TinyR1-32B 正式版。首页 TinyR1-32B 入口指向 SCF 论文条目及正式版模型。
+- Full CV 的 Research Interests、Education、Teaching、Selected Honors、Academic Service 使用卡片布局，宽屏为两行，Academic Service 占较宽的卡片；平板、手机自动换行。
+- `Publications` 下直接展示 Selected Publications、More Publications。Selected 合并为单一列表，按年份从新到旧排列；其余论文在 More 中按年份倒序。
 - 一作／共同一作且 `classifications` 含 CCF-A 或 THU-A 的论文自动精选；SCF 按本人明确要求以 `selected_override` 纳入，当前 11 Selected / 9 More。该例外不改变作者身份。
 - `*` 表示 equal contribution，署名第一也保留星号。TKDE 2026 前两位、NeuFSD 前三位为共一；本人姓名加粗并加下划线。
-- venue 格式统一为 `ACL'26`、`TKDE'26`、`SIGMETRICS'27`；Oral、Main Conference、Accepted 保留在数据中，不在列表显示。
+- 全站 venue 格式统一为 `ACL 2026`、`TKDE 2026`、`SIGMETRICS 2027`；Oral、Main Conference、Accepted 保留在数据中，不在列表显示。
 
 ## 内容依据
 

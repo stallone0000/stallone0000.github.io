@@ -13,7 +13,7 @@
     "bitmatcher": "BitMatcher",
     "cuckoo-counter": "Cuckoo Counter",
     "pssketch": "PSSketch",
-    "tinyr1": "TinyR1-32B"
+    "tinyr1": "TinyR1-32B-Preview"
   },
   "groups": [
     {
@@ -41,8 +41,14 @@
         {
           "label": "Reasoning-model distillation",
           "papers": [
-            "tinyr1"
+            "scf"
           ],
+          "citation_overrides": {
+            "scf": {
+              "label": "TinyR1-32B",
+              "id": "tinyr1"
+            }
+          },
           "links": {
             "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
           }

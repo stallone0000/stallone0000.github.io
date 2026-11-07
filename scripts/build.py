@@ -21,7 +21,6 @@ template = Template((ROOT / 'templates/base.html').read_text())
 by_id = {p['id']: p for p in papers}
 e = escape
 name = f'{e(profile["name"])} <span class="chinese-name" lang="zh">({e(profile["chinese_name"])})</span>'
-groups = [('ai', 'LLMs'), ('network', 'Network Measurement')]
 count_note = f'{len(selected_papers)} selected papers at CCF-A / THU-A venues.'
 
 
@@ -53,7 +52,7 @@ def venue_label(paper):
     abbreviations = {'IEEE TKDE': 'TKDE', 'IEEE/ACM ToN': 'ToN',
                      'IEEE TPDS': 'TPDS', 'arXiv preprint': 'arXiv'}
     venue = abbreviations.get(paper['venue'], paper['venue'])
-    return f"{venue}'{paper['year'] % 100:02d}"
+    return f"{venue} {paper['year']}"
 
 
 def publication(paper):
@@ -102,11 +101,11 @@ def background(for_cv=False):
         f'<ul class="service-list">{"".join(f"<li>{e(s)}</li>" for s in service[key])}</ul></section>'
         for key, title in [('conference_reviewing', 'Conference Reviewer'), ('journal_reviewing', 'Journal Reviewer')]
     )
-    experience = f'<section class="background-section" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>'
-    return f'''<section class="background-section" id="education"><h2>Education</h2>{entries('education')}</section>
+    experience = f'<section class="overview-card" id="teaching"><h2>Teaching</h2>{entries("experience", kind="teaching")}</section>'
+    return f'''<section class="overview-card" id="education"><h2>Education</h2>{entries('education')}</section>
     {experience}
-    <section class="background-section" id="honors"><h2>Selected Honors</h2><ul class="award-list">{awards}</ul></section>
-    <section class="background-section" id="service"><h2>Academic Service</h2><ul class="service-list">{committee}</ul><div class="service-columns">{reviewing}</div></section>'''
+    <section class="overview-card" id="honors"><h2>Selected Honors</h2><ul class="award-list">{awards}</ul></section>
+    <section class="overview-card" id="service"><h2>Academic Service</h2><ul class="service-list">{committee}</ul><div class="service-columns">{reviewing}</div></section>'''
 
 
 def render(file, title, content, page_class=''):
@@ -138,17 +137,18 @@ for group in presentation['groups']:
         for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
             short_name = presentation['short_names'][paper['id']]
             label = short_name if paper['id'] in presentation.get('hide_venue', []) else f'{short_name}, {venue_label(paper)}'
-            citations.append(f'<span class="paper-citation" id="{paper["id"]}">[<a href="cv.html#{paper["id"]}">{e(label)}</a>]</span>')
+            override = topic.get('citation_overrides', {}).get(paper['id'], {})
+            label = override.get('label', label)
+            citation_id = override.get('id', paper['id'])
+            citations.append(f'<span class="paper-citation" id="{e(citation_id, quote=True)}">[<a href="cv.html#{paper["id"]}">{e(label)}</a>]</span>')
         links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
         items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
 content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
 render('index.html', 'Qilong Shi | 史奇龙', content)
 
-full_selected = ''
-for domain, title in groups:
-    full_selected += f'<section class="publication-group"><h3>{title}</h3>' + ''.join(publication(p) for p in selected_papers if p['domain'] == domain) + '</section>'
-publication_sections = f'''<section id="publications"><h2>Publications &amp; Preprints</h2>
+full_selected = ''.join(publication(p) for p in selected_papers)
+publication_sections = f'''<section id="publications"><h2>Publications</h2>
 <p class="section-note">* Equal contribution.</p>
 <section id="selected-publications"><h2>Selected Publications</h2><p class="section-note">{count_note}</p>{full_selected}</section>
 <hr><section id="more-publications"><h2>More Publications</h2>{''.join(publication(p) for p in other_papers)}</section></section>'''
@@ -159,8 +159,8 @@ cv = f'''<header class="cv-header">
 <p><a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a></p>
 <p>[<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</p>
 <nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav></header><hr>
-<section><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''
-cv += background(for_cv=True) + '<hr>' + publication_sections
+<div class="cv-overview"><section class="overview-card" id="research-interests"><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''
+cv += background(for_cv=True) + '</div><hr>' + publication_sections
 render('cv.html', 'Full CV · Qilong Shi', cv, 'cv publications-page')
 # Preserve old publication deep links without keeping a duplicate content page.
 (ROOT / 'publications.html').write_text('''<!doctype html>

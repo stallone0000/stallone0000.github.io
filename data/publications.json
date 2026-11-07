@@ -144,7 +144,9 @@
     "distinction": "Accepted",
     "url": "https://arxiv.org/abs/2602.11717",
     "description": "Sparse, distribution-aware updates reduce functional interference during model merging.",
-    "links": {},
+    "links": {
+      "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
+    },
     "image": "assets/images/beyond-parameter-arithmetic-fig1.png",
     "image_alt": "Repetition rates for model-merging methods reported in the paper",
     "image_width": 723,
@@ -276,7 +278,7 @@
     "url": "https://arxiv.org/abs/2503.04872",
     "description": "Branch-Merge distillation combines domain-specific expert knowledge in a general reasoning model.",
     "links": {
-      "Model": "https://huggingface.co/qihoo360/TinyR1-32B"
+      "Model": "https://huggingface.co/qihoo360/TinyR1-32B-Preview"
     },
     "classifications": [],
     "domain": "ai",
