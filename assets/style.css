@@ -73,7 +73,6 @@ section, article, [id] { scroll-margin-top: 70px; }
 .paper-links { font-size: inherit; line-height: 1.5; }
 .paper-links a { display: inline-block; margin-right: 8px; }
 .paper-note { margin: 3px 0 0; font-size: inherit; color: var(--muted); }
-.highlights-list { margin-bottom: 28px; }
 .cv-header { display: flow-root; }
 .cv-header p { margin-bottom: 8px; }
 .cv-header .portrait-link { display: block; float: right; width: 160px; height: 196px; overflow: hidden; margin: 0 40px 0 30px; }

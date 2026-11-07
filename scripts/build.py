@@ -145,16 +145,11 @@ for group in presentation['groups']:
 content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
 render('index.html', 'Qilong Shi | 史奇龙', content)
 
-highlights = []
-for highlight in profile['highlights']:
-    paper = by_id[highlight['id']]
-    highlights.append(f'<li>{e(highlight["subtitle"])} [<a href="#{paper["id"]}">{e(highlight["title"])}, {e(venue_label(paper))}</a>]</li>')
 full_selected = ''
 for domain, title in groups:
     full_selected += f'<section class="publication-group"><h3>{title}</h3>' + ''.join(publication(p) for p in selected_papers if p['domain'] == domain) + '</section>'
 publication_sections = f'''<section id="publications"><h2>Publications &amp; Preprints</h2>
 <p class="section-note">* Equal contribution.</p>
-<section id="highlights"><h3>Highlights</h3><ul class="highlights-list">{''.join(highlights)}</ul></section>
 <section id="selected-publications"><h2>Selected Publications</h2><p class="section-note">{count_note}</p>{full_selected}</section>
 <hr><section id="more-publications"><h2>More Publications</h2>{''.join(publication(p) for p in other_papers)}</section></section>'''
 

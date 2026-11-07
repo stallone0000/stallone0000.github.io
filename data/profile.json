@@ -89,27 +89,5 @@
       "PLOS ONE (2026)",
       "Cluster Computing (2026)"
     ]
-  },
-  "highlights": [
-    {
-      "id": "sciencearena",
-      "title": "ScienceArena",
-      "subtitle": "Scientific Olympiad reasoning"
-    },
-    {
-      "id": "reasoning-skills",
-      "title": "Reasoning Skills",
-      "subtitle": "Reuse reasoning, reduce tokens"
-    },
-    {
-      "id": "neufsd",
-      "title": "NeuFSD",
-      "subtitle": "Neural flow-size decoding"
-    },
-    {
-      "id": "filtering",
-      "title": "Filtering & Accelerating",
-      "subtitle": "Efficient persistence estimation"
-    }
-  ]
+  }
 }
