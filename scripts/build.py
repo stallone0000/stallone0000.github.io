@@ -38,7 +38,10 @@ def visitor_globe():
     return f'''<section class="visitors-section" id="visitors" aria-label="Worldwide visitors">
 <div class="visitor-globe" style="width: {size}px">
 <script src="https://revolvermaps2.com/embed.js" data-site="{visitors['site_key']}" data-size="{size}" data-theme="{visitors['theme']}" data-color="{visitors['marker_color']}" async></script>
-</div></section>'''
+</div>
+<p class="visitor-total" aria-live="polite" aria-atomic="true">Total visitors: <span id="visitor-total" data-site="{visitors['site_key']}">—</span></p>
+<script src="assets/visitors.js?v=20261107-total" defer></script>
+</section>'''
 
 
 def authors(paper):

@@ -48,6 +48,7 @@ section, article, [id] { scroll-margin-top: 70px; }
 .paper-citation { display: inline; }
 .visitors-section { flex: 0 0 auto; margin: 0; text-align: center; }
 .visitor-globe { max-width: 100%; aspect-ratio: 1; margin: 0 auto; }
+.visitor-total { margin: 8px 0 0; color: var(--muted); font-size: .875rem; line-height: 1.4; font-variant-numeric: tabular-nums; }
 .background-section { margin-top: 30px; }
 .entry { margin-bottom: 20px; }
 .entry h3 { display: inline; font-size: inherit; }
