@@ -6,7 +6,7 @@ The site has a concise homepage and a single [Full CV](https://stallone0000.gith
 
 ## 编辑与生成
 
-- `data/profile.json`：本人选择公开的简介、教育、教学、荣誉、服务与 Highlights。
+- `data/profile.json`：本人选择公开的简介、教育、教学、荣誉、服务与 Highlights；`bio_links` 配置简介中的导师及合作老师主页链接。
 - `data/publications.json`：论文题名、作者顺序、共同一作标记、venue、来源记录、站内 `pdf` 路径与补充资源。
 - `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。
 - `data/visitors.json`：RevolverMaps2 地球开关、本站公开 site key、尺寸、主题与标记颜色。
