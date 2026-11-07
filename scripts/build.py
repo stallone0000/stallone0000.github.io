@@ -85,8 +85,16 @@ def entries(key, kind=None):
     return ''.join(out)
 
 
+def award(row):
+    title = e(row['title'])
+    if row.get('url'):
+        title = f'<a href="{e(row["url"], quote=True)}">{title}</a>'
+    note = f' ({e(row["note"])})' if row.get('note') else ''
+    return f'<li><time>{e(row["year"])}</time>{title}{note}</li>'
+
+
 def background(for_cv=False):
-    awards = ''.join(f'<li><time>{e(a["year"])}</time>{e(a["title"])}</li>' for a in profile['awards'] if not for_cv or a.get('show_in_cv', True))
+    awards = ''.join(award(a) for a in profile['awards'] if not for_cv or a.get('show_in_cv', True))
     service = profile['service']
     committee = ''.join(f'<li>Program Committee, {e(s)}</li>' for s in service['program_committee'])
     reviewing = ''.join(
