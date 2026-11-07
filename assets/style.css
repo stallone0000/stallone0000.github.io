@@ -41,6 +41,8 @@ section, article, [id] { scroll-margin-top: 70px; }
 .research-list { font-size: inherit; line-height: 1.4; }
 .research-list li { margin: 0; }
 .paper-citation { display: inline; }
+.visitors-section { margin: 30px 0 0; text-align: center; }
+.visitor-globe { max-width: 100%; aspect-ratio: 1; margin: 0 auto; }
 .background-section { margin-top: 30px; }
 .entry { margin-bottom: 20px; }
 .entry h3 { display: inline; font-size: inherit; }
@@ -93,7 +95,7 @@ footer p { margin: 0 0 5px; }
   .container, .content-column { width: 100%; padding: 0; }
   .starter-template { padding: 0; }
   .row { margin: 0; }
-  .navbar, .skip-link, footer, .cv-header nav { display: none; }
+  .navbar, .skip-link, footer, .cv-header nav, .visitors-section { display: none; }
   a { color: inherit; }
   h1 { font-size: 23pt; }
   h2 { font-size: 16pt; break-after: avoid; }

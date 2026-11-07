@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "provider": "RevolverMaps2",
+  "site_key": "3uxmv6uvf6gq",
+  "size": 300,
+  "theme": "blue",
+  "marker_color": "ffb23f"
+}

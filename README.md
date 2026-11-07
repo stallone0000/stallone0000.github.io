@@ -9,6 +9,7 @@ The site has a concise homepage and a single [Full CV](https://stallone0000.gith
 - `data/profile.json`：本人选择公开的简介、教育、教学、荣誉、服务与 Highlights。
 - `data/publications.json`：论文题名、作者顺序、共同一作标记、venue、来源记录、站内 `pdf` 路径与补充资源。
 - `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。
+- `data/visitors.json`：RevolverMaps2 地球开关、本站公开 site key、尺寸、主题与标记颜色。
 - `assets/papers/`：可直接打开的论文 PDF，命名为 `年份-venue-论文ID.pdf`。
 - `docs/papers.json`：每份 PDF 的来源、页数、字节数与 SHA256；作者提供文件不记录私人本地路径。
 - `templates/base.html`、`assets/style.css`、`scripts/build.py`：模板、样式与 Python 标准库生成器。
@@ -39,10 +40,18 @@ Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，�
 
 照片来自本人指定的 `IMG_5491.JPG`，显示在 Full CV，CSS 在固定画框内按 125% 放大人物。中文姓名保持括号、常规字重与较小字号。
 
+## 访客地球
+
+地球位于首页论文列表之后，使用本人提供的 [RevolverMaps2](https://revolvermaps2.com/) 嵌入代码：300px、blue 主题、`ffb23f` 橙色标记。小屏自动缩放，打印时隐藏。官方脚本异步加载，自动插入独立的延迟加载 iframe，不阻塞正文和导航。
+
+在 `data/visitors.json` 中设置 `enabled`，或更换 `site_key`、尺寸、主题与颜色，运行生成器后部署。site key 是公开的嵌入标识；账号密码、登录 cookie 和邮箱验证链接不写入仓库。
+
+启用后从接入时开始统计首页访问；计数和地点数据由 RevolverMaps2 提供，本站不生成模拟访客。完整简历直达访问不另装计数器。脚本依据供应商 [embed.js](https://revolvermaps2.com/embed.js)，部署时核对球体、统计接口和真实记录。
+
 ## 备份与恢复
 
 - 私有备选档案库：**https://github.com/stallone0000/academic-website-templates**，保存七种参考风格；Tianxing Chen 为未来内容更丰富时的优先备选。
 - 改版前的完整备份：[2026-09-30 旧版](https://github.com/stallone0000/stallone0000.github.io/releases/tag/ben-style-2026-09-30)。恢复说明见 [docs/RESTORE.md](docs/RESTORE.md)。
 - 恢复旧风格时须保留现行公开资料范围和最新论文数据，避免用过时履历覆盖当前版本。
 
-素材与论文图来源见 [docs/ASSETS.md](docs/ASSETS.md)。当前使用系统 Arial/Helvetica，旧 Lato 字体及许可保留在 `assets/fonts/`。小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。无第三方统计脚本或外部字体请求。
+素材与论文图来源见 [docs/ASSETS.md](docs/ASSETS.md)。正文使用系统 Arial/Helvetica，旧 Lato 字体及许可保留在 `assets/fonts/`。小丑图标由 [OpenMoji](https://openmoji.org/) 设计，采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。启用访客地球时会请求 RevolverMaps2 及其脚本依赖。

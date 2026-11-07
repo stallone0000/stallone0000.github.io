@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate the static academic site from portable profile/publication data."""
 import json
+import re
 from html import escape
 from pathlib import Path
 from string import Template
@@ -9,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 profile = json.loads((ROOT / 'data/profile.json').read_text())
 papers = sorted(json.loads((ROOT / 'data/publications.json').read_text()), key=lambda p: p['year'], reverse=True)
 presentation = json.loads((ROOT / 'data/presentation.json').read_text())
+visitors = json.loads((ROOT / 'data/visitors.json').read_text())
 for paper in papers:
     is_first = paper['authors'][0].rstrip('*') == profile['name']
     is_cofirst = profile['name'] + '*' in paper['authors']
@@ -21,6 +23,22 @@ e = escape
 name = f'{e(profile["name"])} <span class="chinese-name" lang="zh">({e(profile["chinese_name"])})</span>'
 groups = [('ai', 'LLMs'), ('network', 'Network Measurement')]
 count_note = f'{len(selected_papers)} selected papers at CCF-A / THU-A venues.'
+
+
+def visitor_globe():
+    if not visitors['enabled']:
+        return ''
+    if visitors['provider'] != 'RevolverMaps2' or not re.fullmatch(r'[a-z0-9]{12}', visitors['site_key']):
+        raise ValueError('Use the RevolverMaps2 site key issued for this website.')
+    size = int(visitors['size'])
+    if not 150 <= size <= 400:
+        raise ValueError('Keep the visitor globe between 150 and 400 pixels wide.')
+    if not re.fullmatch(r'[a-z0-9-]{1,24}', visitors['theme']) or not re.fullmatch(r'[0-9a-fA-F]{6}', visitors['marker_color']):
+        raise ValueError('Use a valid globe theme and six-digit marker color.')
+    return f'''<section class="visitors-section" id="visitors" aria-label="Worldwide visitors">
+<div class="visitor-globe" style="width: {size}px">
+<script src="https://revolvermaps2.com/embed.js" data-site="{visitors['site_key']}" data-size="{size}" data-theme="{visitors['theme']}" data-color="{visitors['marker_color']}" async></script>
+</div></section>'''
 
 
 def authors(paper):
@@ -103,7 +121,7 @@ for group in presentation['groups']:
         links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
         items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
-content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
+content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>' + visitor_globe()
 render('index.html', 'Qilong Shi | 史奇龙', content)
 
 highlights = []
