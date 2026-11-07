@@ -2,7 +2,7 @@
   "enabled": true,
   "provider": "RevolverMaps2",
   "site_key": "3uxmv6uvf6gq",
-  "size": 200,
+  "size": 240,
   "theme": "night",
   "marker_color": "ffb23f"
 }

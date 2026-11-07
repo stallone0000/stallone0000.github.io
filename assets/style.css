@@ -33,9 +33,12 @@ section, article, [id] { scroll-margin-top: 70px; }
 .navbar-toggle span + span { margin-top: 4px; }
 .navbar-toggle:hover, .navbar-toggle:focus { background: #333; }
 .chinese-name { font-size: 1.375rem; font-weight: 400; white-space: nowrap; }
+.intro { position: relative; }
 .intro-layout { display: flex; align-items: flex-start; gap: 20px; margin-top: 30px; }
 .intro-copy { flex: 1; min-width: 0; }
-.intro-copy .contact-links { margin-bottom: 0; }
+.intro-copy > p { margin-bottom: 0; }
+.intro > .contact-links { margin: 20px 0 0; }
+.intro + hr { margin-top: 12px; }
 .contact-links { font-size: inherit; line-height: 1.4; overflow-wrap: anywhere; }
 .contact-links .profile-links { white-space: normal; }
 .section-note { color: var(--muted); font-size: inherit; line-height: 1.5; }
@@ -75,9 +78,15 @@ footer p { margin: 0 0 5px; }
 .skip-link:focus { top: 5px; }
 @media (min-width: 768px) { .container { width: 750px; } }
 @media (min-width: 992px) { .container { width: 970px; } .content-column { width: 83.3333333333%; } .publications-page { width: 100%; } }
-/* Extend only the introduction into the unused final grid column. */
-@media (min-width: 992px) { .intro-layout.with-globe { width: calc(120% + 36px); } }
-@media (min-width: 1200px) { .container { width: 1170px; } }
+/* The available span runs from the introduction's left edge to the viewport.
+   Center the globe in the remaining space, with at least 12px on either side. */
+@media (min-width: 992px) {
+  .intro { --aside-span: calc(50vw + 455px); }
+  .intro-layout.with-globe { --copy-width: min(100%, calc(var(--aside-span) - var(--visitor-size) - 24px)); }
+  .intro-layout.with-globe .intro-copy { max-width: var(--copy-width); }
+  .intro-layout.with-globe .visitors-section { position: absolute; top: 0; left: var(--copy-width); width: calc(var(--aside-span) - var(--copy-width)); }
+}
+@media (min-width: 1200px) { .container { width: 1170px; } .intro { --aside-span: calc(50vw + 555px); } }
 @media (max-width: 991px) {
   .intro-layout { flex-direction: column; align-items: stretch; gap: 20px; }
   .visitors-section { align-self: center; max-width: 100%; }
@@ -100,7 +109,8 @@ footer p { margin: 0 0 5px; }
 }
 @media print {
   body { padding-top: 0; font-size: 11pt; }
-  .intro-layout.with-globe { width: 100%; }
+  .intro-layout { display: block; }
+  .intro-layout.with-globe .intro-copy { max-width: none; }
   .container, .content-column { width: 100%; padding: 0; }
   .starter-template { padding: 0; }
   .row { margin: 0; }
