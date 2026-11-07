@@ -105,10 +105,10 @@ def render(file, title, content, page_class=''):
 
 # The reference homepage uses short research topics rather than full citations.
 intro = f'''<header class="intro"><h1>{name}</h1>
-  <div class="intro-copy"><p>{e(' '.join(profile['bio']))}</p></div>
+  <div class="intro-layout"><div class="intro-copy"><p>{e(' '.join(profile['bio']))}</p>
   <p class="contact-links">Email: <a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a><br>
     <span class="profile-links">[<a href="cv.html">Full CV</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
-  </p></header><hr>'''
+  </p></div>{visitor_globe()}</div></header><hr>'''
 selected = ''
 for group in presentation['groups']:
     items = []
@@ -121,7 +121,7 @@ for group in presentation['groups']:
         links = ' '.join(f'[<a href="{e(url, quote=True)}">{e(label)}</a>]' for label, url in topic.get('links', {}).items())
         items.append(f'<li>{e(topic["label"])} {" ".join(citations)}{(" " + links) if links else ""}</li>')
     selected += f'<section class="research-group" aria-labelledby="{group["id"]}-heading"><h3 id="{group["id"]}-heading">{e(group["title"])}</h3><ul class="research-list">{"".join(items)}</ul></section>'
-content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>' + visitor_globe()
+content = intro + f'<section id="research"><h2>Selected Publications</h2>{selected}</section><hr>'
 render('index.html', 'Qilong Shi | 史奇龙', content)
 
 highlights = []
