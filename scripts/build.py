@@ -105,7 +105,7 @@ def render(file, title, content, page_class=''):
 
 # The reference homepage uses short research topics rather than full citations.
 intro = f'''<header class="intro"><h1>{name}</h1>
-  <div class="intro-layout"><div class="intro-copy"><p>{e(' '.join(profile['bio']))}</p>
+  <div class="intro-layout{' with-globe' if visitors['enabled'] else ''}"><div class="intro-copy"><p>{e(' '.join(profile['bio']))}</p>
   <p class="contact-links">Email: <a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a><br>
     <span class="profile-links">[<a href="cv.html">Full CV</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
   </p></div>{visitor_globe()}</div></header><hr>'''
