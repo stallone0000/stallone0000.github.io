@@ -48,11 +48,11 @@ def authors(paper):
                      for a in paper['authors'])
 
 
-def venue_label(paper):
+def venue_label(paper, short_year=False):
     abbreviations = {'IEEE TKDE': 'TKDE', 'IEEE/ACM ToN': 'ToN',
                      'IEEE TPDS': 'TPDS', 'arXiv preprint': 'arXiv'}
     venue = abbreviations.get(paper['venue'], paper['venue'])
-    return f"{venue} {paper['year']}"
+    return f"{venue}'{paper['year'] % 100:02d}" if short_year else f"{venue} {paper['year']}"
 
 
 def publication(paper):
@@ -136,7 +136,7 @@ for group in presentation['groups']:
         citations = []
         for paper in sorted((by_id[pid] for pid in topic['papers']), key=lambda p: p['year'], reverse=True):
             short_name = presentation['short_names'][paper['id']]
-            label = short_name if paper['id'] in presentation.get('hide_venue', []) else f'{short_name}, {venue_label(paper)}'
+            label = short_name if paper['id'] in presentation.get('hide_venue', []) else f'{short_name}, {venue_label(paper, short_year=True)}'
             override = topic.get('citation_overrides', {}).get(paper['id'], {})
             label = override.get('label', label)
             citation_id = override.get('id', paper['id'])
