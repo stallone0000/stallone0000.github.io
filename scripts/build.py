@@ -94,7 +94,8 @@ def entries(key, kind=None):
         if kind and row.get('kind') != kind:
             continue
         detail = f'<p>{e(row["detail"])}</p>' if row.get('detail') else ''
-        out.append(f'''<div class="entry"><p><strong>{e(row['organization'])}</strong>, {e(row['role'])}<br>
+        separator = '<br>' if key == 'education' else ', '
+        out.append(f'''<div class="entry"><p><strong>{e(row['organization'])}</strong>{separator}{e(row['role'])}<br>
           <time>{e(row['dates'])}</time></p>{detail}</div>''')
     return ''.join(out)
 
@@ -172,8 +173,8 @@ cv = f'''<header class="cv-header">
 <a class="portrait-link" href="assets/images/qilong-shi.jpg" aria-label="View photo of Qilong Shi"><img class="portrait" src="assets/images/qilong-shi.jpg" alt="Qilong Shi in graduation robes at a library" width="160" height="196"></a>
 <h1>{name}</h1><p>Ph.D. candidate · Department of Computer Science · Tsinghua University</p>
 <p><a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a></p>
-<p>[<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</p>
-<nav><a href="./">← Homepage</a> · Print this page to save a PDF</nav></header><hr>
+<p>[<a href="{e(profile['scholar'])}">Google Scholar</a>]{scholar_statistics()}</p>
+<nav><a href="./">← Homepage</a></nav>{'<script src="assets/scholar.js?v=20261108-badges" defer></script>' if scholar_config['enabled'] else ''}</header><hr>
 <div class="cv-overview"><section class="overview-card" id="research-interests"><h2>Research Interests</h2><p>Sketch-based network measurement and data stream mining; efficient LLM reasoning, model merging, and supervised fine-tuning.</p></section>'''
 cv += background(for_cv=True) + '</div><hr>' + publication_sections
 render('cv.html', 'Full CV · Qilong Shi', cv, 'cv publications-page')

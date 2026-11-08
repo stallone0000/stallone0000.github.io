@@ -55,7 +55,7 @@ Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，�
 
 ## Google Scholar 统计
 
-首页 Google Scholar 链接旁显示 Citations、h-index、i10-index 三枚徽章，外观参考 [dexhunter/google-scholar-badge](https://github.com/dexhunter/google-scholar-badge) 的 Shields social 示例；图标来自 [Simple Icons](https://simpleicons.org/)（CC0 1.0）。数据使用该项目托管服务的三个 JSON 接口；浏览器读取本站缓存，不直接请求该服务。检查时间保存在数据中，不在页面显示。
+首页和 Full CV 的 Google Scholar 链接旁显示 Citations、h-index、i10-index 三枚徽章，外观参考 [dexhunter/google-scholar-badge](https://github.com/dexhunter/google-scholar-badge) 的 Shields social 示例；图标来自 [Simple Icons](https://simpleicons.org/)（CC0 1.0）。数据使用该项目托管服务的三个 JSON 接口；浏览器读取本站缓存，不直接请求该服务。检查时间保存在数据中，不在页面显示。
 
 `.github/workflows/scholar-stats.yml` 每天 00:23 UTC（北京时间 08:23）检查一次，也支持 `gh workflow run scholar-stats.yml` 手动运行。`scripts/update_scholar_stats.py` 校验三项均为有效数字、指标之间一致，再原子替换快照；任何接口报错或限流都不覆盖旧数据与日期。结果只写入本仓库的 `scholar-stats` 数据分支，避免每天重建整个 Pages 网站；主分支保留首次成功快照。
 
