@@ -32,7 +32,7 @@ python3 -m http.server 8765
 - Full CV 的 Research Interests、Education、Teaching、Selected Honors、Academic Service 使用卡片布局，宽屏为两行，Academic Service 占较宽的卡片；平板、手机自动换行。
 - `Publications` 下直接展示 Selected Publications、More Publications。Selected 合并为单一列表，按年份从新到旧排列；其余论文在 More 中按年份倒序。
 - 一作／共同一作且 `classifications` 含 CCF-A 或 THU-A 的论文自动精选；SCF 按本人明确要求以 `selected_override` 纳入，当前 11 Selected / 9 More。该例外不改变作者身份。
-- `*` 表示 equal contribution，署名第一也保留星号。TKDE 2026 前两位、NeuFSD 前三位为共一；本人姓名加粗并加下划线。
+- `*` 表示 equal contribution，署名第一也保留星号。TKDE 2026 前两位、NeuFSD 和 Cooled-KLL 前三位为共一；本人姓名加粗并加下划线。
 - 首页 venue 使用 `ACL'26`、`TKDE'26`、`SIGMETRICS'27` 等简写；Full CV 使用 `ACL 2026`、`TKDE 2026`、`SIGMETRICS 2027` 等完整年份。Oral、Main Conference、Accepted 保留在数据中，不在列表显示。
 
 ## 内容依据

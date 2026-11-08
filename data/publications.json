@@ -316,9 +316,9 @@
     "id": "cooled-kll",
     "title": "Cooled-KLL: Enhancing Quantile Estimation by Filtering Hot Item",
     "authors": [
-      "Qilong Shi",
-      "Wei Zhou",
-      "Yizhuo Zheng",
+      "Qilong Shi*",
+      "Wei Zhou*",
+      "Yizhuo Zheng*",
       "Xinye Xu",
       "Ting Yang",
       "Yuanyuan Zhang",
