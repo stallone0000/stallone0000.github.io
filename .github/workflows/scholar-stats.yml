@@ -1,0 +1,41 @@
+name: Update Google Scholar statistics
+
+on:
+  schedule:
+    - cron: '23 0 * * *' # 08:23 Asia/Shanghai; GitHub may delay scheduled runs.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: google-scholar-statistics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Check updater failure handling
+        run: python3 -m unittest discover -s tests
+      - name: Read the last successful snapshot
+        run: |
+          git fetch --depth=1 origin scholar-stats
+          git show FETCH_HEAD:scholar-stats.json > "$RUNNER_TEMP/scholar-stats.json"
+      - name: Refresh the three metrics
+        run: python3 scripts/update_scholar_stats.py --output "$RUNNER_TEMP/scholar-stats.json"
+      - name: Publish cached statistics
+        run: |
+          scholar_worktree="$RUNNER_TEMP/scholar-stats-branch"
+          git worktree add --detach "$scholar_worktree" FETCH_HEAD
+          cp "$RUNNER_TEMP/scholar-stats.json" "$scholar_worktree/scholar-stats.json"
+          git -C "$scholar_worktree" config user.name 'github-actions[bot]'
+          git -C "$scholar_worktree" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git -C "$scholar_worktree" diff --quiet -- scholar-stats.json; then
+            exit 0
+          fi
+          git -C "$scholar_worktree" add scholar-stats.json
+          git -C "$scholar_worktree" commit -m 'Update Google Scholar statistics'
+          git -C "$scholar_worktree" push origin HEAD:refs/heads/scholar-stats

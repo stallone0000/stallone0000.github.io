@@ -5,12 +5,17 @@ import re
 from html import escape
 from pathlib import Path
 from string import Template
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+from update_scholar_stats import get_scholar_id, validate_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 profile = json.loads((ROOT / 'data/profile.json').read_text())
 papers = sorted(json.loads((ROOT / 'data/publications.json').read_text()), key=lambda p: p['year'], reverse=True)
 presentation = json.loads((ROOT / 'data/presentation.json').read_text())
 visitors = json.loads((ROOT / 'data/visitors.json').read_text())
+scholar_config = json.loads((ROOT / 'data/scholar.json').read_text())
 for paper in papers:
     is_first = paper['authors'][0].rstrip('*') == profile['name']
     is_cofirst = profile['name'] + '*' in paper['authors']
@@ -41,6 +46,20 @@ def visitor_globe():
 <p class="visitor-total" aria-live="polite" aria-atomic="true">Total visitors: <span id="visitor-total" data-site="{visitors['site_key']}">—</span></p>
 <script src="assets/visitors.js?v=20261107-total" defer></script>
 </section>'''
+
+
+def scholar_statistics():
+    if not scholar_config['enabled']:
+        return ''
+    scholar_id = get_scholar_id(profile)
+    snapshot = validate_snapshot(json.loads((ROOT / 'data/scholar-stats.json').read_text()), scholar_id)
+    checked = datetime.fromisoformat(snapshot['fetched_at'].replace('Z', '+00:00'))
+    day = checked.astimezone(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d')
+    metrics = []
+    for key, label in [('citations', 'Citations'), ('h_index', 'h-index'), ('i10_index', 'i10-index')]:
+        value = format(snapshot['metrics'][key], ',')
+        metrics.append(f'<span class="scholar-stat">{label}: <span data-metric="{key}">{value}</span></span>')
+    return f''' <span class="scholar-metrics" id="scholar-metrics" role="group" aria-label="Google Scholar statistics" aria-live="polite" aria-atomic="true" data-scholar-id="{e(scholar_id)}" data-fetched-at="{e(snapshot['fetched_at'])}" data-snapshot-url="{e(scholar_config['snapshot_url'], quote=True)}">{' · '.join(metrics)} <time class="scholar-checked" id="scholar-checked" datetime="{e(snapshot['fetched_at'])}" title="Last checked: {e(snapshot['fetched_at'])}">Checked {day}</time></span>'''
 
 
 def authors(paper):
@@ -127,8 +146,8 @@ intro = f'''<header class="intro{' has-globe' if visitors['enabled'] else ''}" s
   <img class="university-logo" src="assets/images/tsinghua-university.svg" alt="Tsinghua University" width="151" height="48"><img class="university-logo" src="assets/images/peking-university.svg" alt="Peking University" width="171" height="48"></div>
   <div class="intro-layout{' with-globe' if visitors['enabled'] else ''}"><div class="intro-copy"><p>{bio}</p></div>{visitor_globe()}</div>
   <p class="contact-links">Email: <a href="mailto:{e(profile['email'])}">{e(profile['email'])}</a><br>
-    <span class="profile-links">[<a href="cv.html">Full CV</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>] [<a href="{e(profile['github'])}">GitHub</a>]</span>
-  </p></header><hr>'''
+    <span class="profile-links">[<a href="cv.html">Full CV</a>] [<a href="{e(profile['scholar'])}">Google Scholar</a>]{scholar_statistics()} [<a href="{e(profile['github'])}">GitHub</a>]</span>
+  </p>{'<script src="assets/scholar.js?v=20261108" defer></script>' if scholar_config['enabled'] else ''}</header><hr>'''
 selected = ''
 for group in presentation['groups']:
     items = []

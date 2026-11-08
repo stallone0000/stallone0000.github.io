@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "api_base": "https://google-scholar-badge.vercel.app",
+  "snapshot_url": "https://raw.githubusercontent.com/stallone0000/stallone0000.github.io/scholar-stats/scholar-stats.json"
+}

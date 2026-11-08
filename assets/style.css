@@ -45,6 +45,9 @@ section, article, [id] { scroll-margin-top: 70px; }
 .intro + hr { margin-top: 12px; }
 .contact-links { font-size: inherit; line-height: 1.4; overflow-wrap: anywhere; }
 .contact-links .profile-links { white-space: normal; }
+.scholar-metrics { font: inherit; }
+.scholar-stat, .scholar-checked { display: inline-block; white-space: nowrap; }
+.scholar-checked { margin-left: .35em; color: var(--muted); }
 .section-note { color: var(--muted); font-size: inherit; line-height: 1.5; }
 .research-group { margin-top: 28px; }
 .research-list { font-size: inherit; line-height: 1.4; }
@@ -99,6 +102,7 @@ footer p { margin: 0 0 5px; }
   .intro { --aside-span: calc(var(--half-viewport, 50vw) + 455px); }
   .intro.has-globe { --copy-width: min(100%, calc(var(--aside-span) - var(--visitor-size) - 24px)); }
   .intro.has-globe .intro-heading { width: max(584px, calc(var(--copy-width) * 2 / 3)); max-width: var(--copy-width); }
+  .intro.has-globe > .contact-links { max-width: var(--copy-width); }
   .intro-layout.with-globe .intro-copy { max-width: var(--copy-width); }
   .intro-layout.with-globe .visitors-section { position: absolute; top: 0; left: var(--copy-width); width: calc(var(--aside-span) - var(--copy-width)); }
 }

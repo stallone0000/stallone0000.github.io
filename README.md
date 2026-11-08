@@ -10,6 +10,7 @@ The site has a concise homepage and a single [Full CV](https://stallone0000.gith
 - `data/publications.json`：论文题名、作者顺序、共同一作标记、venue、来源记录、站内 `pdf` 路径与补充资源。
 - `data/presentation.json`：首页研究主题与论文简称；首页论文链接跳到 `cv.html#论文ID`。单个主题可用 `citation_overrides` 定制显示名称与首页锚点。
 - `data/visitors.json`：RevolverMaps2 地球开关、本站公开 site key、尺寸、主题与标记颜色。
+- `data/scholar.json`、`data/scholar-stats.json`：Scholar 接口与缓存地址、首次显示的有效统计快照。
 - `assets/papers/`：可直接打开的论文 PDF，命名为 `年份-venue-论文ID.pdf`。
 - `docs/papers.json`：每份 PDF 的来源、页数、字节数与 SHA256；作者提供文件不记录私人本地路径。
 - `templates/base.html`、`assets/style.css`、`scripts/build.py`：模板、样式与 Python 标准库生成器。
@@ -51,6 +52,16 @@ Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，�
 启用后从接入时开始统计首页访问；计数和地点数据由 RevolverMaps2 提供，本站不生成模拟访客。完整简历直达访问不另装计数器。脚本依据供应商 [embed.js](https://revolvermaps2.com/embed.js)，部署时核对球体、统计接口和真实记录。
 
 插件在小于等于260px时隐藏自身累计计数，因此 `assets/visitors.js` 在地球下方补充 `Total visitors`，读取同一站点公开 `api/feed.php` 的 `total` 字段；不把 `live` 或 `views` 当作累计访客数，也不额外发送统计 hit。可见页面每30秒刷新，切回页面时刷新；加载失败保留上一次真实值，首次未加载时显示破折号。
+
+## Google Scholar 统计
+
+首页 Google Scholar 链接旁以正文同款字体显示 Citations、h-index、i10-index，以及北京时间的 `Checked` 日期。数据使用 [dexhunter/google-scholar-badge](https://github.com/dexhunter/google-scholar-badge) 托管服务的三个 JSON 接口；没有使用徽章图片，也没有在浏览器中直接请求该服务。
+
+`.github/workflows/scholar-stats.yml` 每天 00:23 UTC（北京时间 08:23）检查一次，也支持 `gh workflow run scholar-stats.yml` 手动运行。`scripts/update_scholar_stats.py` 校验三项均为有效数字、指标之间一致，再原子替换快照；任何接口报错或限流都不覆盖旧数据与日期。结果只写入本仓库的 `scholar-stats` 数据分支，避免每天重建整个 Pages 网站；主分支保留首次成功快照。
+
+`assets/scholar.js` 在打开网页时读取数据分支，并在页面可见时每小时及切回页面时检查（最多每小时一次）。浏览器缓存最近成功的值；网络失败、旧快照或其他学者的数据均不替换当前显示。`Checked` 指最近成功读取上游服务的时间，不代表 Google Scholar 索引更新时间。上游项目启用 Redis 时会缓存成功数据 7 天，因此数值可能滞后于 Scholar 原站；服务的可用性与调用配额也由第三方控制。
+
+更新逻辑的失败回退检查：`python3 -m unittest discover -s tests`。GitHub 的定时任务可能延迟，公开仓库长期无活动时可能暂停；详见 [GitHub schedule 文档](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)。
 
 ## 备份与恢复
 
