@@ -1,15 +1,11 @@
 // Read our cached snapshot, rather than querying the badge service per visitor.
 (() => {
   const group = document.getElementById('scholar-metrics');
-  const checked = document.getElementById('scholar-checked');
-  if (!group || !checked) return;
+  if (!group) return;
   const scholarId = group.dataset.scholarId;
   const keys = ['citations', 'h_index', 'i10_index'];
   const storageKey = `scholar-stats:${scholarId}`;
   const format = new Intl.NumberFormat('en-US');
-  const dateFormat = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit'
-  });
   let currentTime = Date.parse(group.dataset.fetchedAt);
   let lastRequest = 0;
   let pending = false;
@@ -28,11 +24,6 @@
     keys.forEach(key => {
       group.querySelector(`[data-metric="${key}"]`).textContent = format.format(data.metrics[key]);
     });
-    const parts = Object.fromEntries(dateFormat.formatToParts(new Date(data.fetched_at))
-      .filter(part => ['year', 'month', 'day'].includes(part.type)).map(part => [part.type, part.value]));
-    checked.textContent = `Checked ${parts.year}-${parts.month}-${parts.day}`;
-    checked.dateTime = data.fetched_at;
-    checked.title = `Last checked: ${data.fetched_at}`;
     currentTime = Date.parse(data.fetched_at);
     group.dataset.fetchedAt = data.fetched_at;
     return true;

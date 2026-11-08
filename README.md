@@ -55,11 +55,11 @@ Full CV 的荣誉仅显示本人选择的国奖、Siebel 和华为奖学金，�
 
 ## Google Scholar 统计
 
-首页 Google Scholar 链接旁以正文同款字体显示 Citations、h-index、i10-index，以及北京时间的 `Checked` 日期。数据使用 [dexhunter/google-scholar-badge](https://github.com/dexhunter/google-scholar-badge) 托管服务的三个 JSON 接口；没有使用徽章图片，也没有在浏览器中直接请求该服务。
+首页 Google Scholar 链接旁显示 Citations、h-index、i10-index 三枚徽章，外观参考 [dexhunter/google-scholar-badge](https://github.com/dexhunter/google-scholar-badge) 的 Shields social 示例；图标来自 [Simple Icons](https://simpleicons.org/)（CC0 1.0）。数据使用该项目托管服务的三个 JSON 接口；浏览器读取本站缓存，不直接请求该服务。检查时间保存在数据中，不在页面显示。
 
 `.github/workflows/scholar-stats.yml` 每天 00:23 UTC（北京时间 08:23）检查一次，也支持 `gh workflow run scholar-stats.yml` 手动运行。`scripts/update_scholar_stats.py` 校验三项均为有效数字、指标之间一致，再原子替换快照；任何接口报错或限流都不覆盖旧数据与日期。结果只写入本仓库的 `scholar-stats` 数据分支，避免每天重建整个 Pages 网站；主分支保留首次成功快照。
 
-`assets/scholar.js` 在打开网页时读取数据分支，并在页面可见时每小时及切回页面时检查（最多每小时一次）。浏览器缓存最近成功的值；网络失败、旧快照或其他学者的数据均不替换当前显示。`Checked` 指最近成功读取上游服务的时间，不代表 Google Scholar 索引更新时间。上游项目启用 Redis 时会缓存成功数据 7 天，因此数值可能滞后于 Scholar 原站；服务的可用性与调用配额也由第三方控制。
+`assets/scholar.js` 在打开网页时读取数据分支，并在页面可见时每小时及切回页面时检查（最多每小时一次）。浏览器缓存最近成功的值；网络失败、旧快照或其他学者的数据均不替换当前显示。快照时间是最近成功读取上游服务的时间，不代表 Google Scholar 索引更新时间。上游项目启用 Redis 时会缓存成功数据 7 天，因此数值可能滞后于 Scholar 原站；服务的可用性与调用配额也由第三方控制。
 
 更新逻辑的失败回退检查：`python3 -m unittest discover -s tests`。GitHub 的定时任务可能延迟，公开仓库长期无活动时可能暂停；详见 [GitHub schedule 文档](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)。
 
